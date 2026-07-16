@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.gradle.userdev' version '7.0.182'
+}
+version = mod_version
+group = mod_group_id
+base { archivesName = 'poisoncircle-neoforge-1.21.1' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+repositories { mavenCentral() }
+dependencies {
+    implementation "net.neoforged:neoforge:${neo_version}"
+    compileOnly files('E:/我的世界/.minecraft/versions/魔法apex/mods/[Xaero的小地图] xaerominimap-neoforge-1.21.1-26.3.0.jar')
+    compileOnly files('E:/我的世界/.minecraft/versions/魔法apex/mods/[Xaero的世界地图] xaeroworldmap-neoforge-1.21.1-1.43.0.jar')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+}
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+runs {
+    configureEach { workingDirectory project.layout.projectDirectory.dir('run'); modSource project.sourceSets.main }
+    client { systemProperty 'neoforge.enabledGameTestNamespaces', mod_id }
+    server { argument '--nogui' }
+}
+tasks.withType(ProcessResources).configureEach {
+    var props = [minecraft_version:minecraft_version, minecraft_version_range:minecraft_version_range,
+                 neo_version:neo_version, loader_version_range:loader_version_range, mod_id:mod_id,
+                 mod_name:mod_name, mod_license:mod_license, mod_version:mod_version]
+    inputs.properties props
+    filesMatching(['META-INF/neoforge.mods.toml']) { expand props }
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.withType(Test).configureEach { useJUnitPlatform() }
