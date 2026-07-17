@@ -2,6 +2,7 @@ package com.poisoncircleforge;
 
 import com.mojang.brigadier.arguments.DoubleArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -35,6 +36,7 @@ import net.minecraftforge.network.simple.SimpleChannel;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 @Mod(PoisonCircleForge.MOD_ID)
 public final class PoisonCircleForge {
@@ -45,6 +47,7 @@ public final class PoisonCircleForge {
     private static final int MAX_ROUNDS = 5;
     private static final Map<ResourceKey<Level>, Circle> CIRCLES = new HashMap<>();
     private static final Map<ResourceKey<Level>, Vec3> CONFIGURED_CENTERS = new HashMap<>();
+    private static final Map<Integer, String> ROUND_COMMANDS = new HashMap<>();
 
     public PoisonCircleForge() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -60,6 +63,7 @@ public final class PoisonCircleForge {
         root.then(Commands.literal("center").then(Commands.argument("x", DoubleArgumentType.doubleArg()).then(Commands.argument("y", DoubleArgumentType.doubleArg()).then(Commands.argument("z", DoubleArgumentType.doubleArg()).executes(c -> center(c.getSource(), new Vec3(DoubleArgumentType.getDouble(c, "x"), DoubleArgumentType.getDouble(c, "y"), DoubleArgumentType.getDouble(c, "z"))))))));
         root.then(Commands.literal("time").then(Commands.argument("round", IntegerArgumentType.integer(1, MAX_ROUNDS)).then(Commands.argument("waitSeconds", IntegerArgumentType.integer(0)).then(Commands.argument("shrinkSeconds", IntegerArgumentType.integer(1)).executes(c -> time(c.getSource(), IntegerArgumentType.getInteger(c, "round"), IntegerArgumentType.getInteger(c, "waitSeconds"), IntegerArgumentType.getInteger(c, "shrinkSeconds")))))));
         root.then(Commands.literal("damage").then(Commands.argument("base", DoubleArgumentType.doubleArg(0)).executes(c -> damage(c.getSource(), DoubleArgumentType.getDouble(c, "base"), -1)).then(Commands.argument("increment", DoubleArgumentType.doubleArg(0)).executes(c -> damage(c.getSource(), DoubleArgumentType.getDouble(c, "base"), DoubleArgumentType.getDouble(c, "increment"))))));
+        root.then(Commands.literal("command").then(Commands.argument("round", IntegerArgumentType.integer(1, MAX_ROUNDS)).then(Commands.argument("command", StringArgumentType.greedyString()).executes(c -> setRoundCommand(c.getSource(), IntegerArgumentType.getInteger(c, "round"), StringArgumentType.getString(c, "command"))))));
         root.then(Commands.literal("detector").executes(c -> giveDetector(c.getSource())));
         root.then(Commands.literal("status").executes(c -> status(c.getSource())));
         root.then(Commands.literal("stop").executes(c -> stop(c.getSource())));
@@ -82,6 +86,7 @@ public final class PoisonCircleForge {
                 broadcast(server, "毒圈第 " + (circle.round + 1) + "/5 圈开始缩小！");
             } else if (!circle.waiting && circle.elapsed >= circle.shrinkTicks()) {
                 clearReveals(level); circle.center = circle.target; circle.round++; circle.elapsed = 0;
+                executeRoundCommand(server, circle.round);
                 if (circle.round >= MAX_ROUNDS) { circle.round = MAX_ROUNDS; circle.finished = true; sync(level, circle); continue; }
                 if (circle.round >= MAX_ROUNDS) { CIRCLES.remove(entry.getKey()); broadcast(server, "第五圈完成，毒圈已结束。"); continue; }
                 circle.target = chooseCenter(level, level.random, circle.center, circle.radiusFor(circle.round), circle.radiusFor(circle.round + 1));
@@ -115,6 +120,16 @@ public final class PoisonCircleForge {
         Circle circle = CIRCLES.get(source.getLevel().dimension()); if (circle == null) { source.sendFailure(Component.literal("当前维度没有毒圈。")); return 0; }
         circle.baseDamage = base; if (increment >= 0) circle.increment = increment;
         source.sendSuccess(() -> Component.literal("毒圈伤害已更新。"), true); return 1;
+    }
+    private static int setRoundCommand(CommandSourceStack source, int round, String command) {
+        String normalized = command.startsWith("/") ? command.substring(1) : command;
+        ROUND_COMMANDS.put(round, normalized);
+        source.sendSuccess(() -> Component.literal("第 " + round + " 圈缩完后执行：" + normalized), true);
+        return 1;
+    }
+    private static void executeRoundCommand(MinecraftServer server, int round) {
+        String command = ROUND_COMMANDS.get(round);
+        if (command != null && !command.isBlank()) server.getCommands().performPrefixedCommand(server.createCommandSourceStack().withSuppressedOutput().withPermission(4), command);
     }
     private static int status(CommandSourceStack source) {
         Circle circle = CIRCLES.get(source.getLevel().dimension()); if (circle == null) { source.sendFailure(Component.literal("当前维度没有毒圈。")); return 0; }
