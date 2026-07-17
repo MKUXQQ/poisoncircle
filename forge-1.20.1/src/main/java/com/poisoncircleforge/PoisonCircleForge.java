@@ -34,7 +34,7 @@ public final class PoisonCircleForge {
     private static final Map<ResourceKey<Level>, Circle> CIRCLES = new HashMap<>();
     private static final Map<ResourceKey<Level>, Vec3> CONFIGURED_CENTERS = new HashMap<>();
 
-    public PoisonCircleForge() { MinecraftForge.EVENT_BUS.register(this); }
+    public PoisonCircleForge() { MinecraftForge.EVENT_BUS.register(PoisonCircleForge.class); }
 
     @SubscribeEvent
     public static void registerCommands(RegisterCommandsEvent event) {
