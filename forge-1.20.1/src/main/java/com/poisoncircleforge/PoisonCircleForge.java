@@ -14,6 +14,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.border.WorldBorder;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -23,6 +25,10 @@ import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
@@ -33,13 +39,17 @@ import java.util.Map;
 @Mod(PoisonCircleForge.MOD_ID)
 public final class PoisonCircleForge {
     public static final String MOD_ID = "poisoncircleforge";
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
+    public static final RegistryObject<Item> DETECTOR = ITEMS.register("safe_zone_detector", () -> new SafeZoneDetectorItem(new Item.Properties().stacksTo(1)));
     private static final SimpleChannel NETWORK = NetworkRegistry.newSimpleChannel(new net.minecraft.resources.ResourceLocation(MOD_ID, "circle"), () -> "1", "1"::equals, "1"::equals);
     private static final int MAX_ROUNDS = 5;
     private static final Map<ResourceKey<Level>, Circle> CIRCLES = new HashMap<>();
     private static final Map<ResourceKey<Level>, Vec3> CONFIGURED_CENTERS = new HashMap<>();
 
     public PoisonCircleForge() {
+        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
         NETWORK.registerMessage(0, CircleSyncMessage.class, CircleSyncMessage::encode, CircleSyncMessage::decode, CircleSyncMessage::handle);
+        NETWORK.registerMessage(1, DetectorRevealMessage.class, DetectorRevealMessage::encode, DetectorRevealMessage::decode, DetectorRevealMessage::handle);
         MinecraftForge.EVENT_BUS.register(PoisonCircleForge.class);
     }
 
@@ -50,6 +60,7 @@ public final class PoisonCircleForge {
         root.then(Commands.literal("center").then(Commands.argument("x", DoubleArgumentType.doubleArg()).then(Commands.argument("y", DoubleArgumentType.doubleArg()).then(Commands.argument("z", DoubleArgumentType.doubleArg()).executes(c -> center(c.getSource(), new Vec3(DoubleArgumentType.getDouble(c, "x"), DoubleArgumentType.getDouble(c, "y"), DoubleArgumentType.getDouble(c, "z"))))))));
         root.then(Commands.literal("time").then(Commands.argument("round", IntegerArgumentType.integer(1, MAX_ROUNDS)).then(Commands.argument("waitSeconds", IntegerArgumentType.integer(0)).then(Commands.argument("shrinkSeconds", IntegerArgumentType.integer(1)).executes(c -> time(c.getSource(), IntegerArgumentType.getInteger(c, "round"), IntegerArgumentType.getInteger(c, "waitSeconds"), IntegerArgumentType.getInteger(c, "shrinkSeconds")))))));
         root.then(Commands.literal("damage").then(Commands.argument("base", DoubleArgumentType.doubleArg(0)).executes(c -> damage(c.getSource(), DoubleArgumentType.getDouble(c, "base"), -1)).then(Commands.argument("increment", DoubleArgumentType.doubleArg(0)).executes(c -> damage(c.getSource(), DoubleArgumentType.getDouble(c, "base"), DoubleArgumentType.getDouble(c, "increment"))))));
+        root.then(Commands.literal("detector").executes(c -> giveDetector(c.getSource())));
         root.then(Commands.literal("status").executes(c -> status(c.getSource())));
         root.then(Commands.literal("stop").executes(c -> stop(c.getSource())));
         event.getDispatcher().register(root);
@@ -63,13 +74,15 @@ public final class PoisonCircleForge {
             ServerLevel level = server.getLevel(entry.getKey());
             if (level == null) continue;
             Circle circle = entry.getValue();
+            if (circle.finished) { if (circle.elapsed++ % 20 == 0) damageOutside(level, circle); continue; }
             circle.elapsed++;
             if (circle.elapsed % 20 == 0) damageOutside(level, circle);
             if (circle.waiting && circle.elapsed >= circle.waitTicks()) {
                 circle.waiting = false; circle.elapsed = 0;
                 broadcast(server, "毒圈第 " + (circle.round + 1) + "/5 圈开始缩小！");
             } else if (!circle.waiting && circle.elapsed >= circle.shrinkTicks()) {
-                circle.center = circle.target; circle.round++; circle.elapsed = 0;
+                clearReveals(level); circle.center = circle.target; circle.round++; circle.elapsed = 0;
+                if (circle.round >= MAX_ROUNDS) { circle.round = MAX_ROUNDS; circle.finished = true; sync(level, circle); continue; }
                 if (circle.round >= MAX_ROUNDS) { CIRCLES.remove(entry.getKey()); broadcast(server, "第五圈完成，毒圈已结束。"); continue; }
                 circle.target = chooseCenter(level, level.random, circle.center, circle.radiusFor(circle.round), circle.radiusFor(circle.round + 1));
                 circle.waiting = true;
@@ -107,7 +120,33 @@ public final class PoisonCircleForge {
         Circle circle = CIRCLES.get(source.getLevel().dimension()); if (circle == null) { source.sendFailure(Component.literal("当前维度没有毒圈。")); return 0; }
         source.sendSuccess(() -> Component.literal("第 " + (circle.round + 1) + "/5 圈，半径 " + Math.round(circle.currentRadius()) + "。"), false); return 1;
     }
-    private static int stop(CommandSourceStack source) { return CIRCLES.remove(source.getLevel().dimension()) == null ? 0 : 1; }
+    private static int giveDetector(CommandSourceStack source) { try { source.getPlayerOrException().getInventory().placeItemBackInInventory(new ItemStack(DETECTOR.get())); source.sendSuccess(() -> Component.literal("已获得安全区探测器。"), false); return 1; } catch (Exception e) { source.sendFailure(Component.literal("此指令只能由玩家执行。")); return 0; } }
+    static boolean reveal(ServerPlayer player) { Circle c=CIRCLES.get(player.level().dimension()); if(c==null) return false; player.displayClientMessage(Component.literal("下一安全区：半径 " + Math.round(c.radiusFor(Math.min(MAX_ROUNDS,c.round+1))) + "，已在地图上以白色圆环显示。"), true); return true; }
+    private static void clearReveals(ServerLevel level) {
+        DetectorRevealMessage clear = new DetectorRevealMessage(level.dimension().location().toString(), 0, 0, 0, false);
+        for (ServerPlayer p : level.players()) NETWORK.send(PacketDistributor.PLAYER.with(() -> p), clear);
+    }
+    static boolean revealBlue(ServerPlayer player) {
+        Circle c = CIRCLES.get(player.level().dimension());
+        if (c == null) return false;
+        int nextStage = Math.min(MAX_ROUNDS, c.round + 1);
+        double r = c.radiusFor(nextStage);
+        Vec3 nextNext = chooseCenter((ServerLevel) player.level(), player.getRandom(), c.target, r, c.radiusFor(Math.min(MAX_ROUNDS, nextStage + 1)));
+        DetectorRevealMessage reveal = new DetectorRevealMessage(player.level().dimension().location().toString(), nextNext.x, nextNext.z, c.radiusFor(Math.min(MAX_ROUNDS, nextStage + 1)), true);
+        for (ServerPlayer p : player.getServer().getPlayerList().getPlayers()) if (p == player || (player.getTeam() != null && player.getTeam() == p.getTeam())) NETWORK.send(PacketDistributor.PLAYER.with(() -> p), reveal);
+        player.displayClientMessage(Component.literal("安全区探测器：下下个圈已用青蓝色圆环显示。"), true);
+        return true;
+    }
+    private static int stop(CommandSourceStack source) {
+        Circle stopped = CIRCLES.remove(source.getLevel().dimension());
+        if (stopped == null) return 0;
+        ServerLevel level = source.getLevel();
+        clearReveals(level);
+        CircleSyncMessage clear = new CircleSyncMessage(level.dimension().location().toString(), 0, 0, 0, 0, 0, 0, 0, 0, true, false);
+        for (ServerPlayer player : source.getServer().getPlayerList().getPlayers()) NETWORK.send(PacketDistributor.PLAYER.with(() -> player), clear);
+        source.sendSuccess(() -> Component.literal("毒圈已停止并清除边界。"), true);
+        return 1;
+    }
     private static void sync(ServerLevel level, Circle circle) {
         double nextRadius = circle.radiusFor(Math.min(MAX_ROUNDS, circle.round + 1));
         NETWORK.send(PacketDistributor.ALL.noArg(), new CircleSyncMessage(level.dimension().location().toString(), circle.currentX(), circle.currentZ(), circle.currentRadius(), circle.target.x, circle.target.z, nextRadius, circle.round + 1, Math.max(0, circle.remainingTicks()), circle.waiting, true));
@@ -115,8 +154,7 @@ public final class PoisonCircleForge {
     private static void damageOutside(ServerLevel level, Circle circle) {
         for (ServerPlayer player : level.players()) if (player.isAlive() && !player.isCreative() && !player.isSpectator() && circle.outside(player.getX(), player.getZ())) {
             float damage = (float) (circle.baseDamage + circle.increment * circle.round);
-            if (damage >= player.getHealth()) player.die(level.damageSources().magic());
-            else player.setHealth(player.getHealth() - damage);
+            player.hurt(level.damageSources().magic(), damage);
             player.addEffect(new MobEffectInstance(MobEffects.POISON, 40, 0, false, false, true));
         }
     }
@@ -140,7 +178,7 @@ public final class PoisonCircleForge {
         return best == null ? current : best;
     }
     private static final class Circle {
-        Vec3 center, target; final double initial, end; int round, elapsed; boolean waiting = true; double baseDamage = 2, increment = 2;
+        Vec3 center, target; final double initial, end; int round, elapsed; boolean waiting = true, finished; double baseDamage = 2, increment = 2;
         final int[] wait = {2400, 2400, 2400, 2400, 2400}; final int[] shrink = {2400, 2400, 2400, 2400, 2400};
         Circle(Vec3 center, double initial, double end) { this.center = new Vec3(center.x, 0, center.z); this.target = center; this.initial = initial; this.end = end; }
         double radiusFor(int stage) { return initial + (end - initial) * Math.min(stage, MAX_ROUNDS) / MAX_ROUNDS; }

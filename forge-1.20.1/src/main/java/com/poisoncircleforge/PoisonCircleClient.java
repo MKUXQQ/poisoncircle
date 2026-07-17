@@ -16,8 +16,11 @@ import java.util.*;
 @Mod.EventBusSubscriber(modid = PoisonCircleForge.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public final class PoisonCircleClient {
     private static final Map<String, CircleSyncMessage> CIRCLES = new HashMap<>();
+    private static final Map<String, DetectorRevealMessage> REVEALS = new HashMap<>();
     public static void apply(CircleSyncMessage message) { if (message.active()) CIRCLES.put(message.dimension(), message); else CIRCLES.remove(message.dimension()); XaeroCompatibility.install(); }
     public static CircleSyncMessage current() { Minecraft m=Minecraft.getInstance(); return m.level == null ? null : CIRCLES.get(m.level.dimension().location().toString()); }
+    public static void applyReveal(DetectorRevealMessage message) { if (message.visible()) REVEALS.put(message.dimension(), message); else REVEALS.remove(message.dimension()); }
+    public static DetectorRevealMessage currentReveal() { Minecraft m=Minecraft.getInstance(); return m.level == null ? null : REVEALS.get(m.level.dimension().location().toString()); }
     @SubscribeEvent public static void render(RenderLevelStageEvent e) {
         if (e.getStage()!=RenderLevelStageEvent.Stage.AFTER_WEATHER) return; CircleSyncMessage c=current(); if(c==null) return;
         Camera camera=Minecraft.getInstance().gameRenderer.getMainCamera(); Vec3 p=camera.getPosition(); int n=Math.max(96, Math.min(256,(int)(c.radius()*2)));

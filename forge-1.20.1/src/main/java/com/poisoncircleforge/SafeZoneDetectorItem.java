@@ -1,0 +1,3 @@
+package com.poisoncircleforge;
+import net.minecraft.server.level.ServerPlayer; import net.minecraft.world.*; import net.minecraft.world.entity.player.Player; import net.minecraft.world.item.*; import net.minecraft.world.level.Level;
+public final class SafeZoneDetectorItem extends Item { public SafeZoneDetectorItem(Properties p){super(p);} @Override public InteractionResultHolder<ItemStack> use(Level l,Player p,InteractionHand h){ItemStack s=p.getItemInHand(h);if(!l.isClientSide&&p instanceof ServerPlayer sp&&PoisonCircleForge.revealBlue(sp)&&!p.getAbilities().instabuild)s.shrink(1);return InteractionResultHolder.sidedSuccess(s,l.isClientSide);} }
