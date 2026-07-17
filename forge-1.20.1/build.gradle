@@ -46,6 +46,8 @@ minecraft {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    compileOnly files('E:/我的世界/.minecraft/versions/铁魔法1.20.1的/mods/[Xaero的小地图] xaerominimap-forge-1.20.1-26.4.2.jar')
+    compileOnly files('E:/我的世界/.minecraft/versions/铁魔法1.20.1的/mods/[Xaero的世界地图] xaeroworldmap-forge-1.20.1-1.44.2.jar')
 }
 
 tasks.named('test', Test).configure {

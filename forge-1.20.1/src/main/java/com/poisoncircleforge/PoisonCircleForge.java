@@ -23,6 +23,9 @@ import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.network.NetworkRegistry;
+import net.minecraftforge.network.PacketDistributor;
+import net.minecraftforge.network.simple.SimpleChannel;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,11 +33,15 @@ import java.util.Map;
 @Mod(PoisonCircleForge.MOD_ID)
 public final class PoisonCircleForge {
     public static final String MOD_ID = "poisoncircleforge";
+    private static final SimpleChannel NETWORK = NetworkRegistry.newSimpleChannel(new net.minecraft.resources.ResourceLocation(MOD_ID, "circle"), () -> "1", "1"::equals, "1"::equals);
     private static final int MAX_ROUNDS = 5;
     private static final Map<ResourceKey<Level>, Circle> CIRCLES = new HashMap<>();
     private static final Map<ResourceKey<Level>, Vec3> CONFIGURED_CENTERS = new HashMap<>();
 
-    public PoisonCircleForge() { MinecraftForge.EVENT_BUS.register(PoisonCircleForge.class); }
+    public PoisonCircleForge() {
+        NETWORK.registerMessage(0, CircleSyncMessage.class, CircleSyncMessage::encode, CircleSyncMessage::decode, CircleSyncMessage::handle);
+        MinecraftForge.EVENT_BUS.register(PoisonCircleForge.class);
+    }
 
     @SubscribeEvent
     public static void registerCommands(RegisterCommandsEvent event) {
@@ -71,6 +78,7 @@ public final class PoisonCircleForge {
             for (ServerPlayer player : level.players()) if (!player.isCreative() && !player.isSpectator()) {
                 player.displayClientMessage(Component.literal("毒圈 第 " + (circle.round + 1) + "/5 圈 | " + (circle.waiting ? "距离缩圈: " : "缩圈剩余: ") + Math.max(0, circle.remainingTicks() / 20) + "秒"), true);
             }
+            if (circle.elapsed % 2 == 0) sync(level, circle);
         }
     }
 
@@ -83,6 +91,7 @@ public final class PoisonCircleForge {
         ServerLevel level = source.getLevel(); Vec3 center = CONFIGURED_CENTERS.getOrDefault(level.dimension(), source.getPosition());
         if (!fits(level.getWorldBorder(), center.x, center.z, initial)) { source.sendFailure(Component.literal("初始毒圈超出世界边界。")); return 0; }
         Circle circle = new Circle(center, initial, end); CIRCLES.put(level.dimension(), circle);
+        sync(level, circle);
         source.sendSuccess(() -> Component.literal("毒圈已启动。"), true); return 1;
     }
     private static int time(CommandSourceStack source, int round, int wait, int shrink) {
@@ -99,6 +108,10 @@ public final class PoisonCircleForge {
         source.sendSuccess(() -> Component.literal("第 " + (circle.round + 1) + "/5 圈，半径 " + Math.round(circle.currentRadius()) + "。"), false); return 1;
     }
     private static int stop(CommandSourceStack source) { return CIRCLES.remove(source.getLevel().dimension()) == null ? 0 : 1; }
+    private static void sync(ServerLevel level, Circle circle) {
+        double nextRadius = circle.radiusFor(Math.min(MAX_ROUNDS, circle.round + 1));
+        NETWORK.send(PacketDistributor.ALL.noArg(), new CircleSyncMessage(level.dimension().location().toString(), circle.currentX(), circle.currentZ(), circle.currentRadius(), circle.target.x, circle.target.z, nextRadius, circle.round + 1, Math.max(0, circle.remainingTicks()), circle.waiting, true));
+    }
     private static void damageOutside(ServerLevel level, Circle circle) {
         for (ServerPlayer player : level.players()) if (!player.isCreative() && !player.isSpectator() && circle.outside(player.getX(), player.getZ())) {
             float damage = (float) (circle.baseDamage + circle.increment * circle.round);
