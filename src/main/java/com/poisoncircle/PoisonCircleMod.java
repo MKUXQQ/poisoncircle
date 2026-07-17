@@ -174,7 +174,8 @@ public final class PoisonCircleMod {
         for (ServerPlayer player : level.players()) if (!player.isCreative() && !player.isSpectator()) applyDamage(level, player, GLOBAL_BASE_DAMAGE + GLOBAL_DAMAGE_INCREMENT * MAX_SHRINKS);
     }
     private static void applyDamage(ServerLevel level, ServerPlayer player, double amount) {
-        player.setHealth(DirectHealthDamage.remainingHealth(player.getHealth(), amount));
+        if (DirectHealthDamage.isLethal(player.getHealth(), amount)) player.die(level.damageSources().magic());
+        else player.setHealth(DirectHealthDamage.remainingHealth(player.getHealth(), amount));
         PacketDistributor.sendToPlayer(player, PoisonHitPayload.INSTANCE);
     }
 

@@ -101,7 +101,9 @@ public final class PoisonCircleForge {
     private static int stop(CommandSourceStack source) { return CIRCLES.remove(source.getLevel().dimension()) == null ? 0 : 1; }
     private static void damageOutside(ServerLevel level, Circle circle) {
         for (ServerPlayer player : level.players()) if (!player.isCreative() && !player.isSpectator() && circle.outside(player.getX(), player.getZ())) {
-            player.setHealth(Math.max(0, player.getHealth() - (float) (circle.baseDamage + circle.increment * circle.round)));
+            float damage = (float) (circle.baseDamage + circle.increment * circle.round);
+            if (damage >= player.getHealth()) player.die(level.damageSources().magic());
+            else player.setHealth(player.getHealth() - damage);
             player.addEffect(new MobEffectInstance(MobEffects.POISON, 40, 0, false, false, true));
         }
     }
