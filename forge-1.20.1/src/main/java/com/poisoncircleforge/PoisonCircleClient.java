@@ -23,8 +23,8 @@ public final class PoisonCircleClient {
         Camera camera=Minecraft.getInstance().gameRenderer.getMainCamera(); Vec3 p=camera.getPosition(); int n=Math.max(96, Math.min(256,(int)(c.radius()*2)));
         RenderSystem.enableBlend(); RenderSystem.defaultBlendFunc(); RenderSystem.disableCull(); RenderSystem.setShader(GameRenderer::getPositionColorShader);
         BufferBuilder b=Tesselator.getInstance().getBuilder(); b.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-        for(int i=0;i<n;i++){ double a=i*Math.PI*2/n, q=(i+1)*Math.PI*2/n; double x1=c.x()+Math.cos(a)*c.radius()-p.x,z1=c.z()+Math.sin(a)*c.radius()-p.z,x2=c.x()+Math.cos(q)*c.radius()-p.x,z2=c.z()+Math.sin(q)*c.radius()-p.z; quad(b,x1,z1,x2,z2); }
+        double pulse=0.55+0.45*Math.sin((Minecraft.getInstance().level.getGameTime()%80)*0.16); for(int i=0;i<n;i++){ double a=i*Math.PI*2/n, q=(i+1)*Math.PI*2/n; double x1=c.x()+Math.cos(a)*c.radius()-p.x,z1=c.z()+Math.sin(a)*c.radius()-p.z,x2=c.x()+Math.cos(q)*c.radius()-p.x,z2=c.z()+Math.sin(q)*c.radius()-p.z; quad(b,x1,z1,x2,z2,pulse,i); }
         BufferUploader.drawWithShader(b.end()); RenderSystem.enableCull(); RenderSystem.disableBlend();
     }
-    private static void quad(BufferBuilder b,double x1,double z1,double x2,double z2){ b.vertex(x1,-128,z1).color(255,25,25,115).endVertex(); b.vertex(x2,-128,z2).color(255,25,25,115).endVertex(); b.vertex(x2,512,z2).color(255,70,45,115).endVertex(); b.vertex(x1,512,z1).color(255,70,45,115).endVertex(); }
+    private static void quad(BufferBuilder b,double x1,double z1,double x2,double z2,double pulse,int segment){ int alpha=(int)(85+95*pulse); int glow=(int)(55+80*pulse); double wave=Math.sin(segment*0.42+Minecraft.getInstance().level.getGameTime()*0.20)*16; b.vertex(x1,-128,z1).color(220,10,10,alpha).endVertex(); b.vertex(x2,-128,z2).color(220,10,10,alpha).endVertex(); b.vertex(x2,512+wave,z2).color(255,glow,35,alpha).endVertex(); b.vertex(x1,512+wave,z1).color(255,glow,35,alpha).endVertex(); }
 }

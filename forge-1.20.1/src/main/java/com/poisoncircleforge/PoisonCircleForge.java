@@ -113,7 +113,7 @@ public final class PoisonCircleForge {
         NETWORK.send(PacketDistributor.ALL.noArg(), new CircleSyncMessage(level.dimension().location().toString(), circle.currentX(), circle.currentZ(), circle.currentRadius(), circle.target.x, circle.target.z, nextRadius, circle.round + 1, Math.max(0, circle.remainingTicks()), circle.waiting, true));
     }
     private static void damageOutside(ServerLevel level, Circle circle) {
-        for (ServerPlayer player : level.players()) if (!player.isCreative() && !player.isSpectator() && circle.outside(player.getX(), player.getZ())) {
+        for (ServerPlayer player : level.players()) if (player.isAlive() && !player.isCreative() && !player.isSpectator() && circle.outside(player.getX(), player.getZ())) {
             float damage = (float) (circle.baseDamage + circle.increment * circle.round);
             if (damage >= player.getHealth()) player.die(level.damageSources().magic());
             else player.setHealth(player.getHealth() - damage);
