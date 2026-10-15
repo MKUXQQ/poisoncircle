@@ -1,4 +1,4 @@
-# MKUXQQ 毒圈
+毒圈
 
 Minecraft 1.21.1 NeoForge 多阶段大逃杀毒圈 Mod。
 
