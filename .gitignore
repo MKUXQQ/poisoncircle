@@ -7,3 +7,7 @@ logs/
 *.project
 .settings/
 out/
+# Local third-party Xaero compile dependencies (not redistributed)
+compile-libs/
+__pycache__/
+*.py[cod]

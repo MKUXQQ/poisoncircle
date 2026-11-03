@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "poisoncircle:block/poison_circle_scanner"
+  }
+}

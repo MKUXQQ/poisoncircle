@@ -1,0 +1,41 @@
+{
+  "path": "D:\\dsh项目\\项目终极对决\\poisoncircle\\fabric-26.3\\src\\main\\resources\\assets\\poisoncircle\\models\\block\\poison_circle_scanner.json",
+  "profile": "java-26.1",
+  "kind": "java-model",
+  "structural_errors_absent": true,
+  "dependencies_complete": true,
+  "counts": {
+    "elements": 11,
+    "plane_elements": 0,
+    "inverted_elements": 0,
+    "rotated_elements": 0,
+    "declared_export_faces": 54
+  },
+  "textures": {
+    "poisoncircle:block/scanner_atlas": {
+      "size": [
+        16,
+        16
+      ],
+      "pixels": 256,
+      "rgba_base_bytes": 1024,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "frame_size": [
+        16,
+        16
+      ],
+      "frame_count": 1,
+      "animation_metadata_checked": false
+    }
+  },
+  "texture_pixels": 256,
+  "errors": [],
+  "warnings": [],
+  "limitations": [
+    "No Minecraft client render or FPS measurement",
+    "No full schema validation or arbitrary overlap/hidden-face proof",
+    "No custom animation expansion, bone transform baking or outline pairing verification",
+    "Pack version, item definitions and display contexts require separate checks"
+  ]
+}

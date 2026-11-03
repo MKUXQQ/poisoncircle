@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "com.poisoncircle.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["PoisonCircleCameraMixin", "ScanFirstPersonHandsMixin", "ScanPlayerModelMixin", "ScanInputLockMixin", "XaeroWorldMapScreenMixin"],
+  "injectors": {"defaultRequire": 1}
+}

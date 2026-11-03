@@ -1,0 +1,14 @@
+{
+  "cubes": 38,
+  "declared_faces": 201,
+  "removed_fully_buried_faces": [],
+  "material_textures": 1,
+  "texture_size": [
+    64,
+    64
+  ],
+  "runtime_item_definition_untouched": true,
+  "limitations": [
+    "No client run or FPS measurement; angled opaque surfaces retained conservatively."
+  ]
+}
