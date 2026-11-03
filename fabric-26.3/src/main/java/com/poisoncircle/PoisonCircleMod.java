@@ -59,7 +59,8 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
     private static boolean WORLD_COLLAPSED;
     private static double GLOBAL_BASE_DAMAGE = 2;
     private static double GLOBAL_DAMAGE_INCREMENT = 2;
-    private static double INITIAL_RADIUS = 500, FINAL_RADIUS = 50;
+    private static double INITIAL_RADIUS = 500;
+    private static final double FINAL_RADIUS = CircleRules.FINAL_RADIUS;
 
     @Override public void onInitialize() {
         ScanDevice.register();
@@ -95,7 +96,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
         settingsStore = new ServerSettingsStore(net.fabricmc.loader.api.FabricLoader.getInstance().getConfigDir().resolve("poisoncircle/" + worldId + ".json"), LOGGER);
         PERSISTED_SETTINGS.clear(); PERSISTED_SETTINGS.putAll(settingsStore.load());
         ROUND_DURATIONS.reset(120); ROUND_COMMANDS.clear();
-        GLOBAL_BASE_DAMAGE = 2; GLOBAL_DAMAGE_INCREMENT = 2; INITIAL_RADIUS = 500; FINAL_RADIUS = 50; CONFIGURED_CENTERS.clear();
+        GLOBAL_BASE_DAMAGE = 2; GLOBAL_DAMAGE_INCREMENT = 2; INITIAL_RADIUS = 500; CONFIGURED_CENTERS.clear();
         JsonObject global = PERSISTED_SETTINGS.get("global");
         if (global != null) try {
             if (global.has("wait") && global.has("shrink")) {
@@ -111,10 +112,11 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
                 double base = global.get("baseDamage").getAsDouble(), increment = global.get("damageIncrement").getAsDouble();
                 if (Double.isFinite(base) && base >= 0 && Double.isFinite(increment) && increment >= 0) { GLOBAL_BASE_DAMAGE = base; GLOBAL_DAMAGE_INCREMENT = increment; }
             }
-            if (global.has("initialRadius") && global.has("finalRadius")) {
-                double initial = global.get("initialRadius").getAsDouble(), end = global.get("finalRadius").getAsDouble();
-                if (Double.isFinite(initial) && Double.isFinite(end) && end >= 1 && initial > end) { INITIAL_RADIUS = initial; FINAL_RADIUS = end; }
+            if (global.has("initialRadius")) {
+                double initial = global.get("initialRadius").getAsDouble();
+                if (CircleRules.validStart(initial, FINAL_RADIUS)) INITIAL_RADIUS = initial;
             }
+            global.addProperty("finalRadius", FINAL_RADIUS);
         } catch (Exception e) { LOGGER.log(java.util.logging.Level.WARNING, "Ignoring invalid global poisoncircle settings", e); }
         lobby = null;
         JsonObject lobbyJson = PERSISTED_SETTINGS.get("lobby");
@@ -134,6 +136,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
                 }
             } catch (Exception e) { LOGGER.log(java.util.logging.Level.WARNING, "Ignoring invalid poisoncircle settings for " + entry.getKey(), e); }
         }
+        saveSettings();
     }
     private static int[] parseInts(com.google.gson.JsonArray values, int count, int minimum) {
         if (values.size() != count) throw new IllegalArgumentException("Expected " + count + " values");
@@ -159,7 +162,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
     private static void reset() {
         CIRCLES.clear(); CONFIGURED_CENTERS.clear(); MATCH_PLAYERS.clear(); ELIMINATED_PLAYERS.clear(); LOBBY_WITHDRAWN_PLAYERS.clear(); WORLD_COLLAPSED = false; MATCH_HAD_PARTICIPANTS = false; lobby = null;
         PERSISTED_SETTINGS.clear(); settingsStore = null; ROUND_DURATIONS.reset(120); ROUND_COMMANDS.clear();
-        GLOBAL_BASE_DAMAGE = 2; GLOBAL_DAMAGE_INCREMENT = 2; INITIAL_RADIUS = 500; FINAL_RADIUS = 50;
+        GLOBAL_BASE_DAMAGE = 2; GLOBAL_DAMAGE_INCREMENT = 2; INITIAL_RADIUS = 500;
     }
     private static void sendToPlayer(ServerPlayer player, net.minecraft.network.protocol.common.custom.CustomPacketPayload payload) {
         if (net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.canSend(player, payload.type()))
@@ -172,7 +175,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
         dispatcher.register(Commands.literal("poisoncircle").requires(source -> source.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
             .then(Commands.literal("start").executes(c -> start(c.getSource(), INITIAL_RADIUS, FINAL_RADIUS))
                 .then(Commands.argument("initialRadius", DoubleArgumentType.doubleArg(1))
-                    .then(Commands.argument("finalRadius", DoubleArgumentType.doubleArg(1)).executes(c -> start(c.getSource(),
+                    .then(Commands.argument("finalRadius", DoubleArgumentType.doubleArg(0, 0)).executes(c -> start(c.getSource(),
                         DoubleArgumentType.getDouble(c, "initialRadius"), DoubleArgumentType.getDouble(c, "finalRadius"))))))
             .then(Commands.literal("center").executes(c -> setCenter(c.getSource(), c.getSource().getPosition()))
                 .then(Commands.argument("x", DoubleArgumentType.doubleArg()).suggests(PoisonCircleMod::suggestCurrentX)
@@ -210,11 +213,11 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
         withdrawLobbyPlayers(server);
         if (shouldStopForEliminations(server)) {
             stopAll(server);
-            broadcast(server, "所有参赛玩家已死亡，毒圈已停止。");
             return;
         }
         if (WORLD_COLLAPSED) {
             for (ServerLevel level : server.getAllLevels()) applyWorldDamage(level);
+            if (shouldStopForEliminations(server)) stopAll(server);
             return;
         }
         for (Map.Entry<LevelKey, Circle> entry : CIRCLES.entrySet()) {
@@ -222,7 +225,10 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
             if (level == null) continue;
             Circle circle = entry.getValue();
             circle.elapsed++;
-            if (circle.elapsed % 20 == 0) applyCircleDamage(level, circle);
+            if (circle.elapsed % 20 == 0) {
+                applyCircleDamage(level, circle);
+                if (shouldStopForEliminations(server)) { stopAll(server); return; }
+            }
             if (circle.waiting) {
                 if (circle.elapsed >= circle.waitDuration()) {
                     circle.waiting = false;
@@ -309,7 +315,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
     }
     static boolean revealPreview(ServerPlayer player) {
         Circle circle = CIRCLES.get(new LevelKey(player.level().dimension()));
-        if (circle == null || !circle.hasPreview()) {
+        if (circle == null || !circle.hasPreview() || !CircleRules.canReveal(circle.stage + 3)) {
             playScanSound(player, net.minecraft.sounds.SoundEvents.NOTE_BLOCK_BASS, 0.6F, 0.65F);
             return false;
         }
@@ -324,10 +330,10 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
     private static void broadcast(MinecraftServer server, String message) { server.getPlayerList().broadcastSystemMessage(Component.literal(message), false); }
 
     private static int start(CommandSourceStack source, double initial, double end) {
-        if (!Double.isFinite(initial) || !Double.isFinite(end) || end < 1 || end >= initial) { source.sendFailure(Component.literal("最终半径必须至少为 1 且小于有限的初始半径。")); return 0; }
+        if (!CircleRules.validStart(initial, end)) { source.sendFailure(Component.literal("初始半径必须为至少 1 的有限值，最终半径固定为 0。")); return 0; }
         ServerLevel level = source.getLevel(); Vec3 center = CONFIGURED_CENTERS.getOrDefault(new LevelKey(level.dimension()), source.getPosition());
         if (!circleFits(level.getWorldBorder(), center.x, center.z, initial)) { source.sendFailure(Component.literal("初始毒圈会超出世界边界，请站到更靠内的位置或减小半径。")); return 0; }
-        INITIAL_RADIUS = initial; FINAL_RADIUS = end;
+        INITIAL_RADIUS = initial;
         CONFIGURED_CENTERS.put(new LevelKey(level.dimension()), new Vec3(center.x, 0, center.z));
         saveSettings();
         if (!CIRCLES.isEmpty() || WORLD_COLLAPSED) stopAll(source.getServer());
@@ -340,7 +346,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
             }
         }
         MATCH_HAD_PARTICIPANTS = !MATCH_PLAYERS.isEmpty();
-        Circle circle = new Circle(center, initial, end);
+        Circle circle = new Circle(center, initial);
         circle.baseDamage = GLOBAL_BASE_DAMAGE; circle.damageIncrement = GLOBAL_DAMAGE_INCREMENT;
         circle.waiting = true;
         circle.initializePreview(level, level.getRandom());
@@ -434,15 +440,15 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
 
     private static final class Circle {
         Vec3 startCenter, nextCenter;
-        final double startRadius, endRadius;
+        final double startRadius;
         double nextRadius;
         CirclePreview preview;
         final int[] phaseDurations = new int[MAX_SHRINKS], waitDurations = new int[MAX_SHRINKS];
         int stage, elapsed;
         boolean waiting;
         double baseDamage = 2, damageIncrement = 2;
-        Circle(Vec3 center, double initial, double end) {
-            startCenter = new Vec3(center.x, 0, center.z); nextCenter = startCenter; startRadius = initial; endRadius = end; nextRadius = radiusForStage(1);
+        Circle(Vec3 center, double initial) {
+            startCenter = new Vec3(center.x, 0, center.z); nextCenter = startCenter; startRadius = initial; nextRadius = radiusForStage(1);
             System.arraycopy(ROUND_DURATIONS.copyShrinkTicks(), 0, phaseDurations, 0, MAX_SHRINKS);
             System.arraycopy(ROUND_DURATIONS.copyWaitTicks(), 0, waitDurations, 0, MAX_SHRINKS);
         }
@@ -471,7 +477,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
         double currentRadius() { return startRadius() + (nextRadius - startRadius()) * progress(); }
         Vec3 lerpCenter() { double p = progress(); return new Vec3(startCenter.x + (nextCenter.x - startCenter.x) * p, 0, startCenter.z + (nextCenter.z - startCenter.z) * p); }
         double startRadius() { return radiusForStage(stage); }
-        double radiusForStage(int completed) { return startRadius + (endRadius - startRadius) * Math.min(completed, MAX_SHRINKS) / MAX_SHRINKS; }
+        double radiusForStage(int completed) { return CircleRules.radiusForStage(startRadius, completed); }
         double progress() { return waiting ? 0 : Math.min(1, (double) elapsed / shrinkDuration()); }
         int shrinkDuration() { return phaseDurations[Math.min(stage, MAX_SHRINKS - 1)]; }
         int waitDuration() { return waitDurations[Math.min(stage, MAX_SHRINKS - 1)]; }

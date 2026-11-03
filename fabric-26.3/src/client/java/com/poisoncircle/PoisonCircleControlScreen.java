@@ -37,7 +37,7 @@ public final class PoisonCircleControlScreen extends Screen {
     public PoisonCircleControlScreen() {
         super(Component.literal("毒圈控制台"));
         values.put("initial", ControllerFormSettings.get("initial", "500"));
-        values.put("final", ControllerFormSettings.get("final", "50"));
+        values.put("final", "0");
         values.put("round", ControllerFormSettings.get("round", "1"));
         for (int i = 1; i <= 5; i++) {
             values.put("wait." + i, ControllerFormSettings.get("wait." + i, "120"));
@@ -78,7 +78,8 @@ public final class PoisonCircleControlScreen extends Screen {
     private void initRun(int inner) {
         int third = (inner - 12) / 3;
         field("initial", "初始半径 / 格", 12, 74, third, 32);
-        field("final", "最终半径 / 格", 18 + third, 74, third, 32);
+        field("final", "最终半径 / 固定 0", 18 + third, 74, third, 1);
+        fields.get("final").setEditable(false);
         button("启动毒圈", 24 + third * 2, 85, inner - third * 2 - 12,
             () -> submit("start", values.get("initial"), values.get("final")));
         button("使用当前位置设为中心", 12, 121, inner, () -> submit("center"));
@@ -180,9 +181,7 @@ public final class PoisonCircleControlScreen extends Screen {
         String suffix = switch (action) {
             case "start" -> {
                 double initial = number(arguments[0], "初始半径", 1, 29_999_984);
-                double end = number(arguments[1], "最终半径", 1, 29_999_984);
-                if (end >= initial) throw new IllegalArgumentException("最终半径必须小于初始半径");
-                yield "start " + decimal(initial) + " " + decimal(end);
+                yield "start " + decimal(initial) + " 0";
             }
             case "center" -> arguments.length == 0 ? "center" : "center "
                 + decimal(number(arguments[0], "X", -29_999_984, 29_999_984)) + " "
