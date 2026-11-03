@@ -1,0 +1,7 @@
+{
+  "item.poisoncircle.poison_circle_controller": "Zone Controller",
+  "item.poisoncircle.poison_circle_detector": "Safe Zone Detector",
+  "item.poisoncircle.poison_circle_lobby": "Lobby Range Controller",
+  "block.poisoncircle.poison_circle_scanner": "Safe Zone Scanning Station",
+  "itemGroup.poisoncircle.control": "Poison Circle · Control"
+}

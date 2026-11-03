@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "poisoncircle:block/poison_circle_scanner"
+    }
+  }
+}

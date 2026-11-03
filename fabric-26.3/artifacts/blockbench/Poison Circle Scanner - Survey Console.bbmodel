@@ -1,0 +1,3222 @@
+{
+  "meta": {
+    "format_version": "5.0",
+    "model_format": "java_block",
+    "box_uv": false
+  },
+  "name": "Poison Circle Scanner - Survey Console",
+  "parent": "",
+  "java_block_version": "26.3",
+  "ambientocclusion": true,
+  "front_gui_light": false,
+  "visible_box": [
+    1,
+    1,
+    0
+  ],
+  "variable_placeholders": "",
+  "multi_file_ruleset": "",
+  "variable_placeholder_buttons": [],
+  "unhandled_root_fields": {},
+  "ai_used": true,
+  "ai_agents": "dsh-mcp-client",
+  "resolution": {
+    "width": 16,
+    "height": 16
+  },
+  "elements": [
+    {
+      "name": "Load-bearing plinth",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        1,
+        0,
+        1
+      ],
+      "to": [
+        15,
+        1,
+        15
+      ],
+      "autouv": 0,
+      "color": 8,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "e20116bf-213c-6f09-7d50-d48cbc7f08ae"
+    },
+    {
+      "name": "Lower chassis",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        2,
+        1,
+        2
+      ],
+      "to": [
+        14,
+        3,
+        14
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "223aede3-1a31-e274-f2de-edcaef8607e6"
+    },
+    {
+      "name": "Armored central housing",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3,
+        3,
+        3
+      ],
+      "to": [
+        13,
+        9,
+        13
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "c61acb78-5109-8f4d-6cc7-a986ef998a26"
+    },
+    {
+      "name": "Upper instrument deck",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        2,
+        9,
+        2
+      ],
+      "to": [
+        14,
+        10,
+        14
+      ],
+      "autouv": 0,
+      "color": 4,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "6ae1b7fd-9b0c-c237-ac5a-c4e2badaf6d1"
+    },
+    {
+      "name": "South front lower fascia",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3,
+        4,
+        2.4
+      ],
+      "to": [
+        13,
+        8,
+        3
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "5e55efea-72d6-14d6-58c9-89cf7fa9206e"
+    },
+    {
+      "name": "Rear service plate",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3,
+        4,
+        13
+      ],
+      "to": [
+        13,
+        8,
+        13.35
+      ],
+      "autouv": 0,
+      "color": 4,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "6b7dad2a-b045-bfd1-4075-26b99fe969c1"
+    },
+    {
+      "name": "West side armor",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        2.7,
+        3,
+        4
+      ],
+      "to": [
+        3,
+        8,
+        12
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            8.25,
+            7.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            8.25,
+            7.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            8.25,
+            7.75,
+            11.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "66ab7936-82d0-bd27-6664-63dadf523fbe"
+    },
+    {
+      "name": "East side armor",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        13,
+        3,
+        4
+      ],
+      "to": [
+        13.3,
+        8,
+        12
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            8.25,
+            7.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            8.25,
+            7.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            8.25,
+            7.75,
+            11.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "62359357-2c1b-23d5-a20b-d05c8b0be632"
+    },
+    {
+      "name": "Forward raised control hood",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        2.7,
+        11.15,
+        2.3
+      ],
+      "to": [
+        13.3,
+        12.1,
+        8.7
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        8,
+        11.7,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "afc441e6-48d4-7358-01e6-0602b766cbe4",
+      "rotation": [
+        -18,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "Rear equipment deck",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        2,
+        10,
+        9
+      ],
+      "to": [
+        14,
+        11,
+        14
+      ],
+      "autouv": 0,
+      "color": 9,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            0.25,
+            3.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "14c5607d-12ca-df7f-6873-0463067bc728"
+    },
+    {
+      "name": "Radar display glass",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        4,
+        12.12,
+        3.3
+      ],
+      "to": [
+        12,
+        12.25,
+        7.7
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        8,
+        11.7,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12.25,
+            0.25,
+            15.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            12.25,
+            0.25,
+            15.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            12.25,
+            0.25,
+            15.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            12.25,
+            0.25,
+            15.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            12.25,
+            0.25,
+            15.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            12.25,
+            0.25,
+            15.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "b07f24a2-4f8d-b642-fa79-baf6d4bedb37",
+      "rotation": [
+        -18,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "North display bezel",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3.7,
+        12.1,
+        2.7
+      ],
+      "to": [
+        12.3,
+        12.65,
+        3.3
+      ],
+      "autouv": 0,
+      "color": 9,
+      "origin": [
+        8,
+        11.7,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "5b11316c-7ec6-562e-72f3-16d54d72ae90",
+      "rotation": [
+        -18,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "South display bezel",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3.7,
+        12.1,
+        7.7
+      ],
+      "to": [
+        12.3,
+        12.65,
+        8.3
+      ],
+      "autouv": 0,
+      "color": 1,
+      "origin": [
+        8,
+        11.7,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "27d82ede-afd2-e0ca-d0d4-4f24e4ab8445",
+      "rotation": [
+        -18,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "West display bezel",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3.7,
+        12.1,
+        3.3
+      ],
+      "to": [
+        4.3,
+        12.65,
+        7.7
+      ],
+      "autouv": 0,
+      "color": 4,
+      "origin": [
+        8,
+        11.7,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "88a0e5d8-f973-d0e5-52fe-c996df070186",
+      "rotation": [
+        -18,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "East display bezel",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        11.7,
+        12.1,
+        3.3
+      ],
+      "to": [
+        12.3,
+        12.65,
+        7.7
+      ],
+      "autouv": 0,
+      "color": 5,
+      "origin": [
+        8,
+        11.7,
+        5.5
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "ba7e412b-e15a-775b-3a31-0fb162107b97",
+      "rotation": [
+        -18,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "South vent plate",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        4,
+        7,
+        2.25
+      ],
+      "to": [
+        8.5,
+        8.6,
+        2.4
+      ],
+      "autouv": 0,
+      "color": 5,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "8209113f-c644-18fc-9f1b-2974ceb7fc3f"
+    },
+    {
+      "name": "North vent plate",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        9.5,
+        7,
+        2.25
+      ],
+      "to": [
+        12,
+        8.6,
+        2.4
+      ],
+      "autouv": 0,
+      "color": 6,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.25,
+            4.25,
+            3.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "f787bfeb-9807-6da2-7e23-e0a80f3e0aa9"
+    },
+    {
+      "name": "Left control bank",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3,
+        11,
+        9.2
+      ],
+      "to": [
+        7.5,
+        11.7,
+        11.2
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "25b273eb-46dc-364e-fd93-2aa6a72cf11d"
+    },
+    {
+      "name": "Right toggle bank",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        8.5,
+        11,
+        9.2
+      ],
+      "to": [
+        13,
+        11.7,
+        11.2
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            12.25,
+            4.25,
+            15.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "719d15a7-8de4-4fd0-fd82-8b6b9163916f"
+    },
+    {
+      "name": "Status light housing",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3.5,
+        11,
+        12
+      ],
+      "to": [
+        8,
+        11.4,
+        13
+      ],
+      "autouv": 0,
+      "color": 5,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "705878c7-4f5d-2b51-e2a3-cdfb6c609e3d"
+    },
+    {
+      "name": "Amber warning housing",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        9,
+        11,
+        12
+      ],
+      "to": [
+        12.5,
+        11.4,
+        13
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            4.25,
+            7.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            4.25,
+            7.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            4.25,
+            7.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            4.25,
+            7.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            4.25,
+            7.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "73b9cb06-f9fc-655c-9ca5-bdf53d98fa0a"
+    },
+    {
+      "name": "West antenna base",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        2.7,
+        10.5,
+        12
+      ],
+      "to": [
+        4.7,
+        11.2,
+        14
+      ],
+      "autouv": 0,
+      "color": 6,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "81183291-58db-09c7-da8a-fee38338e22f"
+    },
+    {
+      "name": "East antenna base",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        11.3,
+        10.5,
+        12
+      ],
+      "to": [
+        13.3,
+        11.2,
+        14
+      ],
+      "autouv": 0,
+      "color": 5,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "344af72f-f328-a463-25a3-876f754be596"
+    },
+    {
+      "name": "West telescopic antenna shaft",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3.35,
+        11.1,
+        12.7
+      ],
+      "to": [
+        3.7,
+        15.4,
+        13.05
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "d0f7c742-caa1-b9ee-452b-b1e0d61161b0"
+    },
+    {
+      "name": "West antenna tip",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        3.1,
+        15.1,
+        12.45
+      ],
+      "to": [
+        3.95,
+        15.55,
+        13.3
+      ],
+      "autouv": 0,
+      "color": 4,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "ac8e1cbd-6607-245d-a7f2-dbf05840a7ab"
+    },
+    {
+      "name": "East telescopic antenna shaft",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        11.9,
+        11.1,
+        12.7
+      ],
+      "to": [
+        12.25,
+        15.4,
+        13.05
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "38613575-1697-7d9c-c82a-3f2d762eb998"
+    },
+    {
+      "name": "East antenna tip",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        11.65,
+        15.1,
+        12.45
+      ],
+      "to": [
+        12.5,
+        15.55,
+        13.3
+      ],
+      "autouv": 0,
+      "color": 6,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "2ed4a56d-a0a1-a42e-26a6-4acec02a1a6a"
+    },
+    {
+      "name": "West stabilizer column",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        2,
+        2,
+        7.2
+      ],
+      "to": [
+        3.5,
+        10,
+        8.8
+      ],
+      "autouv": 0,
+      "color": 4,
+      "origin": [
+        8,
+        6,
+        8
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "6201f344-d6e5-e508-8ca5-8d6cb7d1fa33",
+      "rotation": [
+        0,
+        0,
+        -12
+      ]
+    },
+    {
+      "name": "East stabilizer column",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        12.5,
+        2,
+        7.2
+      ],
+      "to": [
+        14,
+        10,
+        8.8
+      ],
+      "autouv": 0,
+      "color": 9,
+      "origin": [
+        8,
+        6,
+        8
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "e84fea83-1afa-dca7-de8c-188757ddaafc",
+      "rotation": [
+        0,
+        0,
+        12
+      ]
+    },
+    {
+      "name": "West clamp foot",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        0.5,
+        0,
+        6.5
+      ],
+      "to": [
+        4,
+        1.2,
+        9.5
+      ],
+      "autouv": 0,
+      "color": 8,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "3bf850a7-c189-b131-964c-c9ee7dcde084"
+    },
+    {
+      "name": "East clamp foot",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        12,
+        0,
+        6.5
+      ],
+      "to": [
+        15.5,
+        1.2,
+        9.5
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "d5640566-e57d-51db-faf8-a0d581eaf0b0"
+    },
+    {
+      "name": "North clamp foot",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        6.5,
+        0,
+        0.5
+      ],
+      "to": [
+        9.5,
+        1.2,
+        4
+      ],
+      "autouv": 0,
+      "color": 0,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "6b3d792f-515e-ca2a-7367-8b28caec91e1"
+    },
+    {
+      "name": "South clamp foot",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        6.5,
+        0,
+        12
+      ],
+      "to": [
+        9.5,
+        1.2,
+        15.5
+      ],
+      "autouv": 0,
+      "color": 2,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            8.25,
+            0.25,
+            11.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "f3642da4-544b-e5c9-c2a3-c6274876f532"
+    },
+    {
+      "name": "Deck status rail",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        4,
+        10.1,
+        8.8
+      ],
+      "to": [
+        12,
+        10.6,
+        9.2
+      ],
+      "autouv": 0,
+      "color": 7,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            8.25,
+            4.25,
+            11.75,
+            7.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "fe779145-88b4-c9cd-3697-2a0db38fa3d9"
+    },
+    {
+      "name": "Service hatch",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        5,
+        4,
+        13.25
+      ],
+      "to": [
+        11,
+        7.5,
+        13.45
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "east": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            0.25,
+            8.25,
+            3.75,
+            11.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "bc783f62-6bf2-48d3-77c8-f5852e681816"
+    },
+    {
+      "name": "West chassis guard",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        1,
+        1,
+        4
+      ],
+      "to": [
+        2,
+        2,
+        12
+      ],
+      "autouv": 0,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "5ef078d3-33d0-0398-1804-1ef09effd37a"
+    },
+    {
+      "name": "East chassis guard",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        14,
+        1,
+        4
+      ],
+      "to": [
+        15,
+        2,
+        12
+      ],
+      "autouv": 0,
+      "color": 4,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4.25,
+            0.25,
+            7.75,
+            3.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "e4079650-c625-2629-2238-d334d2100d41"
+    },
+    {
+      "name": "Front sensor port",
+      "box_uv": false,
+      "render_order": "default",
+      "rescale": false,
+      "locked": false,
+      "shade_direction_override": "",
+      "light_emission": 0,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        6.8,
+        4.2,
+        2.15
+      ],
+      "to": [
+        9.2,
+        6.2,
+        2.5
+      ],
+      "autouv": 0,
+      "color": 4,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.25,
+            8.25,
+            11.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            8.25,
+            8.25,
+            11.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8.25,
+            8.25,
+            11.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8.25,
+            8.25,
+            11.75,
+            11.75
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            8.25,
+            8.25,
+            11.75,
+            11.75
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "7ddc5e94-9070-7677-c339-c028b6c70943"
+    }
+  ],
+  "groups": [],
+  "outliner": [
+    "e20116bf-213c-6f09-7d50-d48cbc7f08ae",
+    "223aede3-1a31-e274-f2de-edcaef8607e6",
+    "c61acb78-5109-8f4d-6cc7-a986ef998a26",
+    "6ae1b7fd-9b0c-c237-ac5a-c4e2badaf6d1",
+    "5e55efea-72d6-14d6-58c9-89cf7fa9206e",
+    "6b7dad2a-b045-bfd1-4075-26b99fe969c1",
+    "66ab7936-82d0-bd27-6664-63dadf523fbe",
+    "62359357-2c1b-23d5-a20b-d05c8b0be632",
+    "afc441e6-48d4-7358-01e6-0602b766cbe4",
+    "14c5607d-12ca-df7f-6873-0463067bc728",
+    "b07f24a2-4f8d-b642-fa79-baf6d4bedb37",
+    "5b11316c-7ec6-562e-72f3-16d54d72ae90",
+    "27d82ede-afd2-e0ca-d0d4-4f24e4ab8445",
+    "88a0e5d8-f973-d0e5-52fe-c996df070186",
+    "ba7e412b-e15a-775b-3a31-0fb162107b97",
+    "8209113f-c644-18fc-9f1b-2974ceb7fc3f",
+    "f787bfeb-9807-6da2-7e23-e0a80f3e0aa9",
+    "25b273eb-46dc-364e-fd93-2aa6a72cf11d",
+    "719d15a7-8de4-4fd0-fd82-8b6b9163916f",
+    "705878c7-4f5d-2b51-e2a3-cdfb6c609e3d",
+    "73b9cb06-f9fc-655c-9ca5-bdf53d98fa0a",
+    "81183291-58db-09c7-da8a-fee38338e22f",
+    "344af72f-f328-a463-25a3-876f754be596",
+    "d0f7c742-caa1-b9ee-452b-b1e0d61161b0",
+    "ac8e1cbd-6607-245d-a7f2-dbf05840a7ab",
+    "38613575-1697-7d9c-c82a-3f2d762eb998",
+    "2ed4a56d-a0a1-a42e-26a6-4acec02a1a6a",
+    "6201f344-d6e5-e508-8ca5-8d6cb7d1fa33",
+    "e84fea83-1afa-dca7-de8c-188757ddaafc",
+    "3bf850a7-c189-b131-964c-c9ee7dcde084",
+    "d5640566-e57d-51db-faf8-a0d581eaf0b0",
+    "6b3d792f-515e-ca2a-7367-8b28caec91e1",
+    "f3642da4-544b-e5c9-c2a3-c6274876f532",
+    "fe779145-88b4-c9cd-3697-2a0db38fa3d9",
+    "bc783f62-6bf2-48d3-77c8-f5852e681816",
+    "5ef078d3-33d0-0398-1804-1ef09effd37a",
+    "e4079650-c625-2629-2238-d334d2100d41",
+    "7ddc5e94-9070-7677-c339-c028b6c70943"
+  ],
+  "textures": [
+    {
+      "name": "scanner_atlas",
+      "relative_path": "../../src/main/resources/assets/poisoncircle/textures/block/scanner_atlas.png",
+      "folder": "block",
+      "namespace": "poisoncircle",
+      "id": "0",
+      "group": "",
+      "scope": 0,
+      "width": 64,
+      "height": 64,
+      "uv_width": 16,
+      "uv_height": 16,
+      "particle": false,
+      "use_as_default": false,
+      "layers_enabled": false,
+      "sync_to_project": "",
+      "file_format": "png",
+      "render_mode": "default",
+      "render_sides": "auto",
+      "wrap_mode": "limited",
+      "pbr_channel": "color",
+      "fps": 7,
+      "force_translucent": false,
+      "frame_time": 1,
+      "frame_order_type": "loop",
+      "frame_order": "",
+      "frame_interpolate": false,
+      "visible": true,
+      "internal": true,
+      "saved": true,
+      "uuid": "35c770a9-2162-7130-6d35-2b4ae811a92d",
+      "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEjElEQVR42u1aXUhTURz/aau3SqMCozEkROnD+YH1kOvBiIw+EOmhD4sNP8i+aGC0imppDcWBYbE+1BbRQ1DEgiIh7CH1oWTLWfiRxZpCRUWW0UMR2EPc2527d/fce+71bnp/T+eenXPPfr/z/zpnS6o40zixxpwJOThqP47tViu0nP9r7mzQwAAAV9vuUL1k6PU7qvnHHU4ojTxbCUJdfqQX5gMAAl4f77hkplF3sgpvX/XIXnD9uly0XfZAa+TZSpBnK2EJB7w+BLw+tp/XAgDg1PlrWLayQPbCHU9foLx6v+bkhXY64PWh9qUvyhoM3EGpi1OIFhr79I23Pzg0TDTfnJmhOnmTxYzxj19hspgBAOWes2g9Uhc11kBKjlQkMXKkIsnBW/cmAEDR/fcIdwaRmmFEuDOI2pc+ljwAfBkZjY4BiYzJux/uDAqOHenwY6TDz8aDaSEAg2U1j1B0/31EH7P7Ix1+JP3+IxwEuchdnc27wIvnfXFJPNTlR2qGEQAw/vEr23587xY2lJb9c90MY8RnoS6/sADxSlQI6YX5rAuYLGbWBTaUlmFseDQiMDKf5dlKMDY8Oj1cgMnzjP8zkZ8Lk8WMao9LPAuQpkItojwpGBG4aTDcGYRj1ebYMUAsBWqR36VaAbOz3DQYK2MY5CxWd7IKu3ZWApglu2ymmU/iCpMrQqF+WQIwZfObVwGqsrn18lVVLIF7GBIiziApxbRiIpEDIPVxWOvzfHLaAioC8378pr8PcLbcpHqJsduVsBakeh2QU7yct4+vXwuwQfBLX6+kiQuzc4jJ5xQvR297v6AgcSGAmmDIi/XRoOaIjW27L3hjPu9e+q/Uz63x/xdgYXYOTOkmskorFJZt+kKoenIJAHCt6CBRWxUXkOIGsVyAS3SqTN99wUv8vNudr14Q1IK8IhagtAvE8nGl/V9qDAD61HEBqX4/rbKAmOn3tverKoaUGOBW2gVIyIuBG9lJ2nGZBWLle0YQNfxfagzgWgN1FjhXOJBwfh9xHK440zjx6PkzAJDsAj/7B7DdasW5woGoneWWv0LYcfcH9WlwNuVpUPP7AK0F0Pw+oHTjNqr5WynXNwCAy9VIpeL1Kzeo5tOuT/P/AjYIeppd+Pb5s+wXnXbaMTjUj0QDmwbL9hxAsmEOxse+k11Fpc6PeK51NiErU7no39TgiHi2H6uP//uA0h1biMbdu/1AlHzlof9mPVhfgKYGhyoiRAnQ3Vwcc8Law+1U5MRE4iMPAJafD1URIa5+GxQiDwBZjh5UHnJGuYbiFiC2wyQIfRjl7U9PMxK/YzL5hLoTlEJUCFmOHgzWF6hKnleAvfvKeQfevNI25S6hNnleAcSIVgRvoNVsVeXL2I/Vo+WiMyIOcNFy0al4EJTsAmLkSVOhVBHUIK94DBBLgVJFmNJCaHJlFwueZhfV7/unnXbR+WoRVqQO2H/4BFIWLZK9qNJlc0LfB2h+GNL6PkDr+QYAaGxoplKRdv7w2iWarZ+MGQ5dAF0AXQBdAF0AXQBdAF0AXQBdAF2AmYkZfx/wFxSJIXG0PxRBAAAAAElFTkSuQmCC"
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        30,
+        -135,
+        0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    }
+  }
+}

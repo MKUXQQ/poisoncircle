@@ -1,0 +1,59 @@
+{
+  "removed_fully_hidden_faces": [
+    [
+      "Armored scanner body",
+      "up"
+    ],
+    [
+      "Armored scanner body",
+      "down"
+    ],
+    [
+      "Upper slanted console",
+      "down"
+    ],
+    [
+      "Signal mast",
+      "up"
+    ],
+    [
+      "Signal mast",
+      "down"
+    ],
+    [
+      "Front radar screen",
+      "south"
+    ],
+    [
+      "Top illuminated scan plate",
+      "down"
+    ],
+    [
+      "Left status rail",
+      "east"
+    ],
+    [
+      "Right status rail",
+      "west"
+    ],
+    [
+      "Large start button",
+      "south"
+    ],
+    [
+      "Front lower trim",
+      "south"
+    ],
+    [
+      "Front lower trim",
+      "down"
+    ]
+  ],
+  "original_faces": 66,
+  "final_faces": 54,
+  "geometry_unchanged": true,
+  "atlas_size": [
+    16,
+    16
+  ]
+}
