@@ -13,6 +13,15 @@ class ScanAnimationStateTest {
     @TempDir Path classes;
 
     @Test
+    void inputMixinUsesClientInputSuperclassInsteadOfShadowingInheritedFields() throws Exception {
+        String source = java.nio.file.Files.readString(Path.of("src/client/java/com/poisoncircle/mixin/ScanInputLockMixin.java"));
+        assertTrue(source.contains("extends ClientInput"));
+        assertFalse(source.contains("@Shadow"), "KeyboardInput does not declare the inherited input fields");
+        assertTrue(source.contains("keyPresses = Input.EMPTY"));
+        assertTrue(source.contains("moveVector = Vec2.ZERO"));
+    }
+
+    @Test
     void requiresServerCompletionAndReleaseBeforeAnotherScan() throws Exception {
         // Client sources are intentionally absent from Loom's common test classpath.
         assertEquals(0, ToolProvider.getSystemJavaCompiler().run(null, null, null, "-d", classes.toString(),
