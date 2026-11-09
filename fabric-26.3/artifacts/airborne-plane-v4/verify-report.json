@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cubes": 269,
+  "uniqueParts": 270,
+  "doorCubes": 6,
+  "nativeGroups": 8,
+  "uvOverlaps": 0,
+  "closedBlocksAperture": true,
+  "openDoorMinimumY": 1.99,
+  "routeSamplePoints": 6021,
+  "routePlayerWidth": 0.58,
+  "routePlayerHeight": 1.79,
+  "animationKeys": 4,
+  "atlasByteIdentical": true,
+  "javaByteIdentical": true,
+  "gameCollisionNote": "Sampling validates cuboid render geometry along specified path, not Minecraft entity collision/runtime physics."
+}

@@ -1,0 +1,64 @@
+{
+  "actualDesktop": true,
+  "uuid": "299cf0f4-57f4-86d9-2cab-3d1e24579e04",
+  "cubes": 200,
+  "rotationOrder": "ZYX",
+  "atlasBottom": 52,
+  "atlas": [
+    512,
+    512
+  ],
+  "door": {
+    "pivot": [
+      0,
+      -2.05,
+      -9
+    ],
+    "openX": -100
+  },
+  "exportCubes": 200,
+  "declaredFaces": 1200,
+  "uniqueNames": 201,
+  "doorCubes": 6,
+  "materials": 1,
+  "uvOverlaps": 0,
+  "seatSurfaceY": -1.15,
+  "seatFeet": [
+    [
+      -1.9,
+      -1.736875,
+      -4
+    ],
+    [
+      1.9,
+      -1.736875,
+      -4
+    ]
+  ],
+  "seatYaw": 180,
+  "floorY": -2.05,
+  "doorOpening": {
+    "x": [
+      -1.65,
+      1.65
+    ],
+    "y": [
+      -2.05,
+      1.15
+    ],
+    "z": -9
+  },
+  "rampEnd": [
+    0,
+    -2.555674169,
+    -12.15138481
+  ],
+  "exit": [
+    0,
+    -2.85,
+    -13
+  ],
+  "runtime": "cargo_door.xRot = -1.745329252 * openFraction",
+  "fps": "not measured",
+  "game": "not launched"
+}

@@ -1,0 +1,19 @@
+{
+  "actualDesktop": true,
+  "uuid": "299cf0f4-57f4-86d9-2cab-3d1e24579e04",
+  "cubes": 200,
+  "rotationOrder": "ZYX",
+  "atlasBottom": 52,
+  "atlas": [
+    512,
+    512
+  ],
+  "door": {
+    "pivot": [
+      0,
+      -2.05,
+      -9
+    ],
+    "openX": -100
+  }
+}

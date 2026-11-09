@@ -1,0 +1,128 @@
+{
+  "note": "Editor-native animation. Runtime uses renderer zRot=-PI/2*openFraction; no animation library required.",
+  "animations": [
+    {
+      "uuid": "b4d47553-01b1-b187-4d84-ce82ef270452",
+      "name": "animation.cargo_door_open_close",
+      "loop": "once",
+      "override": false,
+      "length": 4.5,
+      "snapping": 10,
+      "selected": true,
+      "group_name": "",
+      "scope": 0,
+      "anim_time_update": "",
+      "blend_weight": "",
+      "start_delay": "",
+      "loop_delay": "",
+      "animators": {
+        "7be6945a-b529-b762-486e-affcb45c0578": {
+          "name": "cargo_door",
+          "type": "bone",
+          "rotation_global": false,
+          "quaternion_interpolation": false,
+          "keyframes": [
+            {
+              "channel": "rotation",
+              "data_points": [
+                {
+                  "x": "0",
+                  "y": "0",
+                  "z": "0"
+                }
+              ],
+              "uuid": "bcf11b28-041b-a543-0622-2ac19304d15d",
+              "time": 0,
+              "color": -1,
+              "interpolation": "linear"
+            },
+            {
+              "channel": "rotation",
+              "data_points": [
+                {
+                  "x": "0",
+                  "y": "0",
+                  "z": "-90"
+                }
+              ],
+              "uuid": "47834deb-fcd3-1fa3-4478-3ec5a7f0278c",
+              "time": 1.5,
+              "color": -1,
+              "interpolation": "linear"
+            },
+            {
+              "channel": "rotation",
+              "data_points": [
+                {
+                  "x": "0",
+                  "y": "0",
+                  "z": "-90"
+                }
+              ],
+              "uuid": "7dfeaee8-bb1e-e97a-7b6a-a43760588ebf",
+              "time": 3,
+              "color": -1,
+              "interpolation": "linear"
+            },
+            {
+              "channel": "rotation",
+              "data_points": [
+                {
+                  "x": "0",
+                  "y": "0",
+                  "z": "0"
+                }
+              ],
+              "uuid": "d59e8bd8-3164-9ca2-4e5d-becd330398ee",
+              "time": 4.5,
+              "color": -1,
+              "interpolation": "linear"
+            }
+          ]
+        },
+        "9b7ab078-7a37-9bc6-82a1-b0c411171ea4": {
+          "name": "Fuselage",
+          "type": "bone",
+          "rotation_global": false,
+          "quaternion_interpolation": false
+        },
+        "b48e0770-215e-c8fd-61c2-c629b3725ee5": {
+          "name": "Wings",
+          "type": "bone",
+          "rotation_global": false,
+          "quaternion_interpolation": false
+        },
+        "91274f12-c04d-dd75-8888-b8d7e88315d1": {
+          "name": "Engines",
+          "type": "bone",
+          "rotation_global": false,
+          "quaternion_interpolation": false
+        },
+        "4d0d4235-0349-81f0-1dbb-80f9af21b3ed": {
+          "name": "Tail",
+          "type": "bone",
+          "rotation_global": false,
+          "quaternion_interpolation": false
+        },
+        "f6313ea8-19df-08c9-8214-a96e261ce98b": {
+          "name": "Landing_gear",
+          "type": "bone",
+          "rotation_global": false,
+          "quaternion_interpolation": false
+        },
+        "7fef563a-6a39-9814-3f6e-7cc4dbe69a8f": {
+          "name": "Cargo",
+          "type": "bone",
+          "rotation_global": false,
+          "quaternion_interpolation": false
+        },
+        "c953f4d0-42a9-4e24-9541-f47ae876368a": {
+          "name": "Cockpit",
+          "type": "bone",
+          "rotation_global": false,
+          "quaternion_interpolation": false
+        }
+      }
+    }
+  ]
+}

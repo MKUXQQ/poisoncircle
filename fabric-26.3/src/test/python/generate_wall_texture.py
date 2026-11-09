@@ -36,9 +36,9 @@ def sample(u, v):
     pulse_gate = math.exp(-(periodic_distance(v, .30) / .075) ** 2) + .8 * math.exp(-(periodic_distance(v, .68) / .09) ** 2)
     pulse = min(1.0, ridge * pulse_gate)
     heat = min(1.0, .75 * flow + .6 * pulse)
-    return (round(144 + 30 * cloud + 81 * min(1.0, flow + pulse)),
-            round(23 + 14 * cloud + 100 * heat + 30 * pulse),
-            round(18 + 5 * cloud + 13 * heat + 8 * pulse),
+    return (round(168 + 30 * cloud + 57 * min(1.0, flow + pulse)),
+            round(12 + 8 * cloud + 58 * heat + 18 * pulse),
+            round(14 + 4 * cloud + 9 * heat + 5 * pulse),
             round(48 + 9 * cloud + 32 * flow + 17 * pulse))
 
 

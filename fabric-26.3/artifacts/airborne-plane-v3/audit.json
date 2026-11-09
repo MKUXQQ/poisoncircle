@@ -1,0 +1,189 @@
+{
+  "actualDesktop": true,
+  "cubes": 193,
+  "exportCubes": 193,
+  "faces": 1158,
+  "groups": 7,
+  "rotatedCubes": 126,
+  "rotationOrder": "ZYX",
+  "atlas": [
+    1024,
+    1024
+  ],
+  "texturePixels": 1048576,
+  "baseRGBABytes": 4194304,
+  "materials": 1,
+  "frames": 1,
+  "animationDependencies": 0,
+  "uvOverlaps": [],
+  "uvBoundsChecked": true,
+  "bounds": [
+    [
+      -33.89773202259897,
+      -9.2,
+      -53.080984059891605
+    ],
+    [
+      33.89773202259897,
+      15.8,
+      45.29778672695266
+    ]
+  ],
+  "span": 67.79546404519795,
+  "length": 98.37877078684426,
+  "seatFeet": [
+    [
+      1.6,
+      -2,
+      -5
+    ],
+    [
+      -1.6,
+      -2,
+      -5
+    ]
+  ],
+  "walkDomain": {
+    "x": [
+      -5,
+      5
+    ],
+    "z": [
+      -21,
+      12
+    ],
+    "feetY": -2
+  },
+  "doorCorridor": {
+    "x": [
+      -9,
+      -5
+    ],
+    "z": [
+      -20.5,
+      -15.5
+    ],
+    "feetY": -2
+  },
+  "exit": [
+    -9,
+    -2,
+    -17.5
+  ],
+  "floor": {
+    "x": [
+      -6.6,
+      6.6
+    ],
+    "z": [
+      -28,
+      22
+    ],
+    "top": -2.05
+  },
+  "step": {
+    "x": [
+      -8.9,
+      -6.5
+    ],
+    "z": [
+      -20.9,
+      -15.1
+    ],
+    "top": -2.06
+  },
+  "doorOpening": {
+    "x": -7,
+    "y": [
+      -2.2,
+      2.35
+    ],
+    "z": [
+      -21,
+      -15
+    ]
+  },
+  "baselinePreserved": true,
+  "roundtripSerialized": true,
+  "previewCameras": [
+    [
+      "iso",
+      [
+        120,
+        85,
+        140
+      ]
+    ],
+    [
+      "front",
+      [
+        0,
+        10,
+        180
+      ]
+    ],
+    [
+      "side",
+      [
+        180,
+        10,
+        0
+      ]
+    ],
+    [
+      "top",
+      [
+        0,
+        180,
+        0
+      ]
+    ],
+    [
+      "cockpit",
+      [
+        1.6,
+        8.2,
+        29
+      ]
+    ],
+    [
+      "cargo",
+      [
+        1.6,
+        -0.38,
+        -5
+      ]
+    ]
+  ],
+  "visualAudit": {
+    "status": "visible exterior reviewed by modlens",
+    "image": "fit-iso.png",
+    "evidence": "Entire nose and tail within frame. Visible main fuselage continuous; no clear through-hole or large missing surface. Wing panels, teal stripes, engine pods and T-tail visible.",
+    "limitations": "Single oblique view cannot validate hidden belly/far side, every attachment, complete topology, or in-game appearance."
+  },
+  "gameClient": "not run",
+  "fps": "not measured",
+  "retainedFaces": "Interior and underside remain visible through real door; no unproven hidden-face deletion",
+  "representation": "193 meaningful structural cuboids, panel seams/rivets painted, no pixel extrusion",
+  "fitReview": {
+    "width": 1200,
+    "height": 900,
+    "projection": "orthographic",
+    "zoom": 0.18,
+    "target": [
+      0,
+      1,
+      -2
+    ],
+    "views": [
+      "iso",
+      "front",
+      "side",
+      "top",
+      "rear"
+    ]
+  },
+  "uniqueJavaChildren": 193,
+  "walkCheck": "Floor spans complete domain; benches outside x±5.3; port door rotated104°; corridor z[-20.5,-15.5]",
+  "frozen": true
+}

@@ -17,9 +17,9 @@ def check():
     pixels = list(image.get_flattened_data())
     alpha = [p[3] for p in pixels]
     assert 48 <= min(alpha) < max(alpha) <= 104 and len(set(alpha)) >= 45
-    assert all(144 <= r <= 255 and 23 <= g <= 168 and 18 <= b <= 44 and r > g > b
+    assert all(168 <= r <= 255 and 12 <= g <= 96 and 14 <= b <= 32 and r >= 2.5 * g and r > b
                for r, g, b, _ in pixels)
-    assert 0.01 <= sum(g >= 130 for _, g, _, _ in pixels) / len(pixels) <= 0.04
+    assert 0.01 <= sum(g >= 74 for _, g, _, _ in pixels) / len(pixels) <= 0.04
     # Every pixel carries haze: bright currents never cut holes into the wall.
     assert sum(a > 0 for a in alpha) == size * size
     for n in range(size):

@@ -1,0 +1,16 @@
+{
+  "actualDesktop": true,
+  "uuid": "5dee7cbb-20e8-8719-9f2d-d0073c4b55d5",
+  "cubes": 328,
+  "atlasBottom": 155,
+  "door": {
+    "child": "cargo_door",
+    "pivot": [
+      0,
+      -2.05,
+      -29
+    ],
+    "closedX": 0,
+    "openX": -1.7453292519943295
+  }
+}

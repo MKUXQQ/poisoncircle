@@ -1,0 +1,202 @@
+{
+  "blockbench": {
+    "version": "5.2.2",
+    "environment": "desktop",
+    "platform": "win32",
+    "is_mobile": false
+  },
+  "plugin": {
+    "version": "1.10.1",
+    "build_id": "a66e717ad742a552424659f33c9b6149dafef4901888c66a956832d1d7e68062",
+    "build_mode": "production"
+  },
+  "project": null,
+  "format": null,
+  "formats": [
+    {
+      "id": "bedrock",
+      "name": "Bedrock 版实体",
+      "supported_features": [
+        "bone_rig",
+        "edit_mode",
+        "paint_mode",
+        "animation_mode",
+        "animation_files",
+        "animation_controllers",
+        "box_uv",
+        "optional_box_uv",
+        "single_texture",
+        "uv_rotation",
+        "pbr",
+        "rotate_cubes",
+        "texture_meshes",
+        "locators",
+        "molang"
+      ]
+    },
+    {
+      "id": "bedrock_block",
+      "name": "Bedrock 版方块",
+      "supported_features": [
+        "bone_rig",
+        "edit_mode",
+        "paint_mode",
+        "display_mode",
+        "optional_box_uv",
+        "uv_rotation",
+        "pbr",
+        "rotate_cubes",
+        "texture_meshes",
+        "molang"
+      ]
+    },
+    {
+      "id": "bedrock_old",
+      "name": "Bedrock 版旧版实体",
+      "supported_features": [
+        "bone_rig",
+        "edit_mode",
+        "paint_mode",
+        "animation_mode",
+        "animation_files",
+        "animation_controllers",
+        "box_uv",
+        "single_texture",
+        "pbr",
+        "locators",
+        "molang"
+      ]
+    },
+    {
+      "id": "free",
+      "name": "通用模型",
+      "supported_features": [
+        "meshes",
+        "bone_rig",
+        "edit_mode",
+        "paint_mode",
+        "animation_mode",
+        "optional_box_uv",
+        "per_texture_uv_size",
+        "uv_rotation",
+        "armature_rig",
+        "pbr",
+        "rotate_cubes",
+        "locators",
+        "molang"
+      ]
+    },
+    {
+      "id": "geckolib_model",
+      "name": "GeckoLib Animated Model",
+      "supported_features": [
+        "bone_rig",
+        "edit_mode",
+        "paint_mode",
+        "animation_mode",
+        "animation_files",
+        "box_uv",
+        "optional_box_uv",
+        "single_texture",
+        "uv_rotation",
+        "rotate_cubes",
+        "locators",
+        "molang"
+      ]
+    },
+    {
+      "id": "image",
+      "name": "图像",
+      "supported_features": [
+        "paint_mode",
+        "image_editor",
+        "single_texture",
+        "per_texture_uv_size",
+        "molang"
+      ]
+    },
+    {
+      "id": "java_block",
+      "name": "Java 版方块/物品",
+      "supported_features": [
+        "edit_mode",
+        "paint_mode",
+        "display_mode",
+        "optional_box_uv",
+        "uv_rotation",
+        "pbr",
+        "rotate_cubes",
+        "rotation_limit"
+      ]
+    },
+    {
+      "id": "modded_entity",
+      "name": "模组版实体",
+      "supported_features": [
+        "bone_rig",
+        "edit_mode",
+        "paint_mode",
+        "animation_mode",
+        "box_uv",
+        "single_texture",
+        "box_uv_float_size",
+        "pbr",
+        "rotate_cubes",
+        "molang"
+      ],
+      "unknown_features": [
+        "integer_size"
+      ]
+    },
+    {
+      "id": "optifine_entity",
+      "name": "OptiFine 实体",
+      "supported_features": [
+        "bone_rig",
+        "edit_mode",
+        "paint_mode",
+        "box_uv",
+        "optional_box_uv",
+        "per_texture_uv_size",
+        "per_group_texture",
+        "pbr"
+      ],
+      "unknown_features": [
+        "integer_size"
+      ]
+    },
+    {
+      "id": "optifine_part",
+      "name": "OptiFine Part",
+      "supported_features": [
+        "bone_rig",
+        "edit_mode",
+        "paint_mode",
+        "box_uv",
+        "optional_box_uv",
+        "per_texture_uv_size",
+        "per_group_texture",
+        "pbr"
+      ],
+      "unknown_features": [
+        "integer_size"
+      ]
+    },
+    {
+      "id": "skin",
+      "name": "Minecraft 皮肤",
+      "supported_features": [
+        "bone_rig",
+        "paint_mode",
+        "box_uv",
+        "single_texture",
+        "integer_size",
+        "molang"
+      ]
+    }
+  ],
+  "notes": [
+    "Format features are host declarations, not guarantees of MCP tool compatibility. Null or unknown_features means the host did not declare a boolean value; supported_features lists true flags.",
+    "Tool enabled state reflects native editor conditions. Use list_modes and set_mode to change editor tabs, then refresh tools/list. Calls still validate individual arguments."
+  ]
+}

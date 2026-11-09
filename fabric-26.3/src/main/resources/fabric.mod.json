@@ -11,7 +11,7 @@
     "main": ["com.poisoncircle.PoisonCircleMod"],
     "client": ["com.poisoncircle.PoisonCircleClient"]
   },
-  "mixins": [{"config": "poisoncircle.client.mixins.json", "environment": "client"}],
+  "mixins": ["poisoncircle.mixins.json", {"config": "poisoncircle.client.mixins.json", "environment": "client"}],
   "depends": {
     "fabricloader": ">=0.20.1",
     "minecraft": "26.3",

@@ -1,0 +1,75 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"project\": {\n    \"name\": \"Atlas C-94 Continuous Hull V3\",\n    \"uuid\": \"c624540c-67ea-ca82-509d-049574b4282a\",\n    \"save_path\": \"D:\\\\dsh项目\\\\项目终极对决\\\\poisoncircle\\\\fabric-26.3\\\\artifacts\\\\airborne-plane-v3\\\\Atlas C-94 Continuous Hull V3.bbmodel\"\n  },\n  \"format\": {\n    \"id\": \"modded_entity\",\n    \"name\": \"模组版实体\"\n  },\n  \"resolution\": {\n    \"texture_width\": 1024,\n    \"texture_height\": 1024\n  },\n  \"counts\": {\n    \"cubes\": 193,\n    \"meshes\": 0,\n    \"groups\": 7,\n    \"textures\": 1,\n    \"outliner_elements\": 193\n  },\n  \"root_groups\": [\n    {\n      \"name\": \"Fuselage\",\n      \"uuid\": \"b774f2f9-572e-dcee-1661-eb83d1d6ab00\",\n      \"children\": 77\n    },\n    {\n      \"name\": \"Wings\",\n      \"uuid\": \"e45e66e9-eb88-075b-0b11-6b4cae441cf6\",\n      \"children\": 20\n    },\n    {\n      \"name\": \"Engines\",\n      \"uuid\": \"fba6c65d-ef77-7dd0-181a-777a0b6d9349\",\n      \"children\": 48\n    },\n    {\n      \"name\": \"Tail\",\n      \"uuid\": \"1e823b9d-e4cf-f1c3-66df-b5a105998ce0\",\n      \"children\": 4\n    },\n    {\n      \"name\": \"Landing_gear\",\n      \"uuid\": \"48202cfd-d7f2-df73-57dc-1b0b71beca7a\",\n      \"children\": 10\n    },\n    {\n      \"name\": \"Cargo\",\n      \"uuid\": \"0b972330-fa3c-7811-a025-722b4a8d4bb0\",\n      \"children\": 28\n    },\n    {\n      \"name\": \"Cockpit\",\n      \"uuid\": \"fbfe7303-a5c6-50bb-1101-502ba4965356\",\n      \"children\": 6\n    }\n  ]\n}"
+    },
+    {
+      "name": "Atlas C-94 Continuous Hull V3.bbmodel",
+      "title": "Atlas C-94 Continuous Hull V3 project file",
+      "uri": "blockbench://project/c624540c-67ea-ca82-509d-049574b4282a.bbmodel",
+      "description": "Live Blockbench project file, including unsaved edits and embedded textures. Readable while this project is active; select it again if unavailable.",
+      "mimeType": "application/json",
+      "type": "resource_link"
+    }
+  ],
+  "structuredContent": {
+    "project": {
+      "name": "Atlas C-94 Continuous Hull V3",
+      "uuid": "c624540c-67ea-ca82-509d-049574b4282a",
+      "save_path": "D:\\dsh项目\\项目终极对决\\poisoncircle\\fabric-26.3\\artifacts\\airborne-plane-v3\\Atlas C-94 Continuous Hull V3.bbmodel"
+    },
+    "format": {
+      "id": "modded_entity",
+      "name": "模组版实体"
+    },
+    "resolution": {
+      "texture_width": 1024,
+      "texture_height": 1024
+    },
+    "counts": {
+      "cubes": 193,
+      "meshes": 0,
+      "groups": 7,
+      "textures": 1,
+      "outliner_elements": 193
+    },
+    "root_groups": [
+      {
+        "name": "Fuselage",
+        "uuid": "b774f2f9-572e-dcee-1661-eb83d1d6ab00",
+        "children": 77
+      },
+      {
+        "name": "Wings",
+        "uuid": "e45e66e9-eb88-075b-0b11-6b4cae441cf6",
+        "children": 20
+      },
+      {
+        "name": "Engines",
+        "uuid": "fba6c65d-ef77-7dd0-181a-777a0b6d9349",
+        "children": 48
+      },
+      {
+        "name": "Tail",
+        "uuid": "1e823b9d-e4cf-f1c3-66df-b5a105998ce0",
+        "children": 4
+      },
+      {
+        "name": "Landing_gear",
+        "uuid": "48202cfd-d7f2-df73-57dc-1b0b71beca7a",
+        "children": 10
+      },
+      {
+        "name": "Cargo",
+        "uuid": "0b972330-fa3c-7811-a025-722b4a8d4bb0",
+        "children": 28
+      },
+      {
+        "name": "Cockpit",
+        "uuid": "fbfe7303-a5c6-50bb-1101-502ba4965356",
+        "children": 6
+      }
+    ]
+  }
+}

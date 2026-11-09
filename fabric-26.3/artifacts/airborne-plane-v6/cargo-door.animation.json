@@ -1,0 +1,131 @@
+[
+  {
+    "uuid": "49e4e7eb-4df3-9a9c-c361-6082b76a0721",
+    "name": "animation.cargo_door_open_close",
+    "loop": "once",
+    "override": false,
+    "length": 4.5,
+    "snapping": 10,
+    "selected": true,
+    "group_name": "",
+    "scope": 0,
+    "anim_time_update": "",
+    "blend_weight": "",
+    "start_delay": "",
+    "loop_delay": "",
+    "animators": {
+      "67cb80cc-b04a-91c7-7657-6f4b5658960d": {
+        "name": "cargo_door",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false,
+        "keyframes": [
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "0",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "5f9d90db-473a-9873-c548-bee7fa3f3f3b",
+            "time": 0,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "-100",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "6d7f2edf-0b19-418b-6490-c2f032a36dab",
+            "time": 1.5,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "-100",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "7af8cb33-73b4-951d-aca6-4824596790d1",
+            "time": 3,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "0",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "7667a38a-4264-6847-dbd4-3db62eee0301",
+            "time": 4.5,
+            "color": -1,
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "44980b4a-cbc3-a52d-df1c-73f1a2023eea": {
+        "name": "Cabin",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "300497a3-5c61-157d-7725-a2f412406223": {
+        "name": "Fuselage",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "dc5a7729-69f5-5adf-9472-ad17702a1cfc": {
+        "name": "Nose",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "ee3e8b75-ca0e-b154-c127-8f846577809f": {
+        "name": "Cockpit",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "191b502f-3411-c15d-85d9-0173eebc799a": {
+        "name": "Wings",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "6e4c5b2f-15a8-e9dc-f419-769bed9052f3": {
+        "name": "Engines",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "7e24d6a2-6f9c-be79-dce0-c65faf3ce7e1": {
+        "name": "Tail",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "70ed8609-3518-850c-b07a-04539c5c9786": {
+        "name": "Gear",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      }
+    }
+  }
+]

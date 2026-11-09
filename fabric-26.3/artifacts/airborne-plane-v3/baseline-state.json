@@ -1,0 +1,75 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"project\": {\n    \"name\": \"Atlas C-94 Heavy Transport\",\n    \"uuid\": \"8e4d8c2c-c132-1972-2e55-68fffaf7e8bd\",\n    \"save_path\": \"D:\\\\dsh项目\\\\项目终极对决\\\\poisoncircle\\\\fabric-26.3\\\\artifacts\\\\airborne-plane-v2\\\\Atlas C-94 Heavy Transport.bbmodel\"\n  },\n  \"format\": {\n    \"id\": \"modded_entity\",\n    \"name\": \"模组版实体\"\n  },\n  \"resolution\": {\n    \"texture_width\": 1024,\n    \"texture_height\": 1024\n  },\n  \"counts\": {\n    \"cubes\": 145,\n    \"meshes\": 0,\n    \"groups\": 7,\n    \"textures\": 1,\n    \"outliner_elements\": 145\n  },\n  \"root_groups\": [\n    {\n      \"name\": \"Fuselage\",\n      \"uuid\": \"a2b2675f-2819-d556-b8a5-568f439851b4\",\n      \"children\": 51\n    },\n    {\n      \"name\": \"Wings\",\n      \"uuid\": \"0d746fa6-47ea-b8fe-e7a8-fe33046f344c\",\n      \"children\": 16\n    },\n    {\n      \"name\": \"Engines\",\n      \"uuid\": \"e9fa1597-6922-1fd5-c8dc-ad2b8ad6d604\",\n      \"children\": 48\n    },\n    {\n      \"name\": \"Tail\",\n      \"uuid\": \"b64a2b84-3adb-6b09-4277-e000c01693e9\",\n      \"children\": 2\n    },\n    {\n      \"name\": \"Cargo\",\n      \"uuid\": \"9f3df4fb-dd85-2ac6-5577-3b55d23e1b5d\",\n      \"children\": 8\n    },\n    {\n      \"name\": \"Cockpit\",\n      \"uuid\": \"61f5dbb6-37c0-48bf-d288-0d15398c718b\",\n      \"children\": 10\n    },\n    {\n      \"name\": \"Landing_gear\",\n      \"uuid\": \"8ba9ebb8-17b0-6335-083a-438eaa863004\",\n      \"children\": 10\n    }\n  ]\n}"
+    },
+    {
+      "name": "Atlas C-94 Heavy Transport.bbmodel",
+      "title": "Atlas C-94 Heavy Transport project file",
+      "uri": "blockbench://project/8e4d8c2c-c132-1972-2e55-68fffaf7e8bd.bbmodel",
+      "description": "Live Blockbench project file, including unsaved edits and embedded textures. Readable while this project is active; select it again if unavailable.",
+      "mimeType": "application/json",
+      "type": "resource_link"
+    }
+  ],
+  "structuredContent": {
+    "project": {
+      "name": "Atlas C-94 Heavy Transport",
+      "uuid": "8e4d8c2c-c132-1972-2e55-68fffaf7e8bd",
+      "save_path": "D:\\dsh项目\\项目终极对决\\poisoncircle\\fabric-26.3\\artifacts\\airborne-plane-v2\\Atlas C-94 Heavy Transport.bbmodel"
+    },
+    "format": {
+      "id": "modded_entity",
+      "name": "模组版实体"
+    },
+    "resolution": {
+      "texture_width": 1024,
+      "texture_height": 1024
+    },
+    "counts": {
+      "cubes": 145,
+      "meshes": 0,
+      "groups": 7,
+      "textures": 1,
+      "outliner_elements": 145
+    },
+    "root_groups": [
+      {
+        "name": "Fuselage",
+        "uuid": "a2b2675f-2819-d556-b8a5-568f439851b4",
+        "children": 51
+      },
+      {
+        "name": "Wings",
+        "uuid": "0d746fa6-47ea-b8fe-e7a8-fe33046f344c",
+        "children": 16
+      },
+      {
+        "name": "Engines",
+        "uuid": "e9fa1597-6922-1fd5-c8dc-ad2b8ad6d604",
+        "children": 48
+      },
+      {
+        "name": "Tail",
+        "uuid": "b64a2b84-3adb-6b09-4277-e000c01693e9",
+        "children": 2
+      },
+      {
+        "name": "Cargo",
+        "uuid": "9f3df4fb-dd85-2ac6-5577-3b55d23e1b5d",
+        "children": 8
+      },
+      {
+        "name": "Cockpit",
+        "uuid": "61f5dbb6-37c0-48bf-d288-0d15398c718b",
+        "children": 10
+      },
+      {
+        "name": "Landing_gear",
+        "uuid": "8ba9ebb8-17b0-6335-083a-438eaa863004",
+        "children": 10
+      }
+    ]
+  }
+}

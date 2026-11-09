@@ -11,3 +11,9 @@ out/
 compile-libs/
 __pycache__/
 *.py[cod]
+# Downloaded research recordings and provider metadata stay local
+fabric-26.3/artifacts/airborne-audio/references/*
+!fabric-26.3/artifacts/airborne-audio/references/bilibili-more-reference-review.md
+# Original reference images are not project-authored assets
+fabric-26.3/artifacts/airborne-plane*/references/
+fabric-26.3/artifacts/airborne-plane*/goblin-reference.jpg

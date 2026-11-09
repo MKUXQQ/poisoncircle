@@ -64,14 +64,18 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
 
     @Override public void onInitialize() {
         ScanDevice.register();
+        AirborneSounds.register();
+        CircleSounds.register();
+        AirborneGame.register();
         net.minecraft.core.Registry.register(net.minecraft.core.registries.BuiltInRegistries.CREATIVE_MODE_TAB,
             net.minecraft.resources.Identifier.fromNamespaceAndPath(MOD_ID, "control"),
             net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab.builder()
                 .title(Component.translatable("itemGroup.poisoncircle.control"))
                 .icon(() -> new ItemStack(CONTROLLER))
-                .displayItems((parameters, output) -> { output.accept(CONTROLLER); output.accept(DETECTOR); output.accept(LOBBY); output.accept(ScanDevice.ITEM); }).build());
+                .displayItems((parameters, output) -> { output.accept(CONTROLLER); output.accept(DETECTOR); output.accept(LOBBY); output.accept(ScanDevice.ITEM); output.accept(AirborneGame.MANAGER); output.accept(AirborneGame.SETTER); }).build());
         net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.clientboundPlay().register(CircleSyncPayload.TYPE, CircleSyncPayload.STREAM_CODEC);
         net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.clientboundPlay().register(PoisonHitPayload.TYPE, PoisonHitPayload.STREAM_CODEC);
+        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.clientboundPlay().register(ShrinkWarningPayload.TYPE, ShrinkWarningPayload.STREAM_CODEC);
         net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.clientboundPlay().register(DetectorRevealPayload.TYPE, DetectorRevealPayload.STREAM_CODEC);
         net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> registerCommands(dispatcher));
         net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STARTED.register(PoisonCircleMod::loadSettings);
@@ -174,6 +178,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
     public static void registerCommands(com.mojang.brigadier.CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(Commands.literal("poisoncircle").requires(source -> source.permissions().hasPermission(net.minecraft.server.permissions.Permissions.COMMANDS_GAMEMASTER))
             .then(Commands.literal("start").executes(c -> start(c.getSource(), INITIAL_RADIUS, FINAL_RADIUS))
+                .then(Commands.literal("airborne").executes(c -> AirborneGame.start(c.getSource())))
                 .then(Commands.argument("initialRadius", DoubleArgumentType.doubleArg(1))
                     .then(Commands.argument("finalRadius", DoubleArgumentType.doubleArg(0, 0)).executes(c -> start(c.getSource(),
                         DoubleArgumentType.getDouble(c, "initialRadius"), DoubleArgumentType.getDouble(c, "finalRadius"))))))
@@ -230,26 +235,27 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
                 if (shouldStopForEliminations(server)) { stopAll(server); return; }
             }
             if (circle.waiting) {
+                if (circle.warnedStage != circle.stage && circle.remainingTicks() <= 200) {
+                    circle.warnedStage = circle.stage;
+                    for (ServerPlayer player : level.players()) if (net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.canSend(player, ShrinkWarningPayload.TYPE)) net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, new ShrinkWarningPayload());
+                }
                 if (circle.elapsed >= circle.waitDuration()) {
                     circle.waiting = false;
                     circle.elapsed = 0;
                     sendCircleSync(level, circle, true, false);
                     executeRoundCommand(server, circle.stage + 1);
-                    broadcast(server, "毒圈第 " + (circle.stage + 1) + "/5 圈开始缩小！");
                 }
             } else if (circle.elapsed >= circle.shrinkDuration()) {
                 circle.finishShrink();
                 if (circle.stage == MAX_SHRINKS) {
                     WORLD_COLLAPSED = true;
                     sendCircleSync(level, circle, false, true);
-                    broadcast(server, "毒圈已完成第 5 次缩圈，所有世界现在都受到毒圈伤害！");
                     return;
                 }
                 circle.promotePreview(level, level.getRandom());
                 circle.waiting = true;
                 circle.elapsed = 0;
                 sendCircleSync(level, circle, true, false);
-                broadcast(server, "第 " + (circle.stage + 1) + "/5 圈安全区已刷新，" + circle.waitDuration() / 20 + " 秒后开始缩小。");
             }
             if (circle.elapsed % 5 == 0) sendCircleSync(level, circle, true, false);
         }
@@ -257,6 +263,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
 
     private static void enrollParticipant(ServerPlayer player) {
         UUID id = player.getUUID();
+        if (AirborneGame.isActive() && !AirborneGame.isParticipant(id)) return;
         if (!MatchElimination.shouldEnroll(!CIRCLES.isEmpty() || WORLD_COLLAPSED,
             LOBBY_WITHDRAWN_PLAYERS.contains(id), inLobby(player), player.isCreative() || player.isSpectator())) return;
         MATCH_PLAYERS.add(id);
@@ -272,7 +279,16 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
         }
         return MatchElimination.shouldStop(MATCH_HAD_PARTICIPANTS, false);
     }
+    static void beginAirborneMatch(MinecraftServer server, java.util.Collection<UUID> participants) {
+        MATCH_PLAYERS.clear(); ELIMINATED_PLAYERS.clear(); LOBBY_WITHDRAWN_PLAYERS.clear();
+        MATCH_PLAYERS.addAll(participants);
+        MATCH_HAD_PARTICIPANTS = !MATCH_PLAYERS.isEmpty();
+    }
+    static void markAirborneAbandoned(UUID id) {
+        if (MATCH_PLAYERS.contains(id)) ELIMINATED_PLAYERS.add(id);
+    }
     private static void stopAll(MinecraftServer server) {
+        AirborneGame.stop(server);
         for (Map.Entry<LevelKey, Circle> entry : CIRCLES.entrySet()) {
             ServerLevel level = server.getLevel(entry.getKey().key());
             if (level != null) sendCircleSync(level, entry.getValue(), false, false);
@@ -284,12 +300,12 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
     }
     private static void withdrawLobbyPlayers(MinecraftServer server) {
         if (CIRCLES.isEmpty() && !WORLD_COLLAPSED) return;
-        for (ServerPlayer player : server.getPlayerList().getPlayers()) if (inLobby(player)) {
+        for (ServerPlayer player : server.getPlayerList().getPlayers()) if (inLobby(player) && !(AirborneGame.isActive() && AirborneGame.isParticipant(player.getUUID()))) {
             if (MATCH_PLAYERS.remove(player.getUUID())) LOBBY_WITHDRAWN_PLAYERS.add(player.getUUID());
         }
     }
     private static boolean immuneToPoison(ServerPlayer player) {
-        return MatchElimination.immune(ELIMINATED_PLAYERS.contains(player.getUUID()), LOBBY_WITHDRAWN_PLAYERS.contains(player.getUUID()),
+        return AirborneGame.isAirborne(player.getUUID()) || MatchElimination.immune(ELIMINATED_PLAYERS.contains(player.getUUID()), LOBBY_WITHDRAWN_PLAYERS.contains(player.getUUID()),
             inLobby(player), player.isAlive(), player.isCreative() || player.isSpectator());
     }
     private static void applyCircleDamage(ServerLevel level, Circle circle) {
@@ -336,16 +352,25 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
         INITIAL_RADIUS = initial;
         CONFIGURED_CENTERS.put(new LevelKey(level.dimension()), new Vec3(center.x, 0, center.z));
         saveSettings();
-        if (!CIRCLES.isEmpty() || WORLD_COLLAPSED) stopAll(source.getServer());
-        WORLD_COLLAPSED = false; MATCH_PLAYERS.clear(); ELIMINATED_PLAYERS.clear(); LOBBY_WITHDRAWN_PLAYERS.clear();
-        for (ServerPlayer player : source.getServer().getPlayerList().getPlayers()) {
-            if (inLobby(player)) LOBBY_WITHDRAWN_PLAYERS.add(player.getUUID());
-            else if (!player.isCreative() && !player.isSpectator()) {
-                MATCH_PLAYERS.add(player.getUUID());
-                if (!player.isAlive()) ELIMINATED_PLAYERS.add(player.getUUID());
+        if (AirborneGame.isActive()) {
+            // Circle controls must not cancel flights or replace the locked match roster.
+            for (Map.Entry<LevelKey, Circle> entry : CIRCLES.entrySet()) {
+                ServerLevel existing = source.getServer().getLevel(entry.getKey().key());
+                if (existing != null) sendCircleSync(existing, entry.getValue(), false, false);
             }
+            CIRCLES.clear(); WORLD_COLLAPSED = false;
+        } else {
+            if (!CIRCLES.isEmpty() || WORLD_COLLAPSED) stopAll(source.getServer());
+            WORLD_COLLAPSED = false; MATCH_PLAYERS.clear(); ELIMINATED_PLAYERS.clear(); LOBBY_WITHDRAWN_PLAYERS.clear();
+            for (ServerPlayer player : source.getServer().getPlayerList().getPlayers()) {
+                if (inLobby(player)) LOBBY_WITHDRAWN_PLAYERS.add(player.getUUID());
+                else if (!player.isCreative() && !player.isSpectator()) {
+                    MATCH_PLAYERS.add(player.getUUID());
+                    if (!player.isAlive()) ELIMINATED_PLAYERS.add(player.getUUID());
+                }
+            }
+            MATCH_HAD_PARTICIPANTS = !MATCH_PLAYERS.isEmpty();
         }
-        MATCH_HAD_PARTICIPANTS = !MATCH_PLAYERS.isEmpty();
         Circle circle = new Circle(center, initial);
         circle.baseDamage = GLOBAL_BASE_DAMAGE; circle.damageIncrement = GLOBAL_DAMAGE_INCREMENT;
         circle.waiting = true;
@@ -428,7 +453,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
         player.getInventory().placeItemBackInInventory(new ItemStack(DETECTOR), net.minecraft.util.Prediction.SERVER_ONLY); source.sendSuccess(() -> Component.literal("已获得毒圈探测器。"), false); return 1;
     }
     private static int stop(CommandSourceStack source) {
-        if (CIRCLES.isEmpty() && !WORLD_COLLAPSED) return noCircle(source);
+        if (CIRCLES.isEmpty() && !WORLD_COLLAPSED && !AirborneGame.isActive()) return noCircle(source);
         stopAll(source.getServer()); source.sendSuccess(() -> Component.literal("毒圈已停止。"), true); return 1;
     }
     private static int noCircle(CommandSourceStack source) { source.sendFailure(Component.literal("当前维度没有活动毒圈。")); return 0; }
@@ -445,6 +470,7 @@ public final class PoisonCircleMod implements net.fabricmc.api.ModInitializer {
         CirclePreview preview;
         final int[] phaseDurations = new int[MAX_SHRINKS], waitDurations = new int[MAX_SHRINKS];
         int stage, elapsed;
+        int warnedStage = -1;
         boolean waiting;
         double baseDamage = 2, damageIncrement = 2;
         Circle(Vec3 center, double initial) {

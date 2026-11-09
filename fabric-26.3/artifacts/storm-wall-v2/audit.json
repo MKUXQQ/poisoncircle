@@ -3,23 +3,23 @@
     128,
     128
   ],
-  "png_bytes": 14989,
+  "png_bytes": 13351,
   "rgba_base_bytes": 65536,
   "channel_min": [
-    144,
-    23,
-    18,
+    168,
+    12,
+    14,
     48
   ],
   "channel_max": [
     255,
-    164,
-    43,
+    94,
+    31,
     102
   ],
   "alpha_mean": 59.2830810546875,
   "coverage_percent": 100.0,
-  "bright_pulse_percent": 2.38037109375,
+  "bright_pulse_percent": 2.42919921875,
   "axis_edge_max_delta": [
     0,
     0

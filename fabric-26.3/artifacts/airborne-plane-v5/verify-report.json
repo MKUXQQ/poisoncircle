@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "cubes": 328,
+  "uniqueNames": 329,
+  "doorCubes": 7,
+  "uvOverlap": 0,
+  "atlas": [
+    1024,
+    1024
+  ],
+  "seatedFeetY": -1.736875,
+  "seatSurfaceY": -1.15,
+  "standingRouteEnvelopeSamples": 22140,
+  "riseTorsoSamples": 2214,
+  "playerWidth": 0.58,
+  "playerHeight": 1.79,
+  "dualLanes": [
+    -0.55,
+    0.55
+  ],
+  "rampAngle": -100,
+  "closedBlocksAperture": true,
+  "nativeAnimationX": -1.7453292519943295,
+  "javaAndAtlasIdentical": true,
+  "limitations": "Rendered cuboid sampling, not Minecraft physics or gameplay. Initial seat-to-stand motion starts within its supporting cushion; standing clearance checked from the seat-front waypoint. Ramp floor contact allows an 0.08 lower sample margin to handle body feet/sole and ramp incline."
+}

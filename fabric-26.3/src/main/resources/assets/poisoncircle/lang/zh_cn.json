@@ -3,5 +3,8 @@
   "item.poisoncircle.poison_circle_controller": "毒圈控制器",
   "item.poisoncircle.poison_circle_lobby": "大厅范围控制器",
   "block.poisoncircle.poison_circle_scanner": "安全区扫描台",
+  "item.poisoncircle.airborne_manager": "空降模式管理器",
+  "item.poisoncircle.airborne_setter": "空降区域设置器",
+  "entity.poisoncircle.airborne_plane": "运输飞机",
   "itemGroup.poisoncircle.control": "毒圈 · 控制中心"
 }

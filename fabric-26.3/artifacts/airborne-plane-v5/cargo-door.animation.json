@@ -1,0 +1,125 @@
+[
+  {
+    "uuid": "9c725154-a48f-0487-60ff-9ac4a20270c6",
+    "name": "animation.cargo_door_open_close",
+    "loop": "once",
+    "override": false,
+    "length": 4.5,
+    "snapping": 10,
+    "selected": true,
+    "group_name": "",
+    "scope": 0,
+    "anim_time_update": "",
+    "blend_weight": "",
+    "start_delay": "",
+    "loop_delay": "",
+    "animators": {
+      "bf17b743-de9a-1a31-15c2-94019a38a388": {
+        "name": "cargo_door",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false,
+        "keyframes": [
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "0",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "a7036499-5b88-932f-6bbf-9ebc26c1468c",
+            "time": 0,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "-100",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "6bff89c9-2794-8c05-96fb-a576e0cd6853",
+            "time": 1.5,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "-100",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "8f53377d-f359-a01a-59ca-156ec6d546df",
+            "time": 3,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "0",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "f782c2e8-9c80-e9ba-daf8-f485196d7091",
+            "time": 4.5,
+            "color": -1,
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "7335cd7f-bef0-9f63-6f34-ce11e25c40c3": {
+        "name": "Fuselage",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "9e9b81a2-2354-f280-3345-a184863c768a": {
+        "name": "Wings",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "5a3dd512-5a6f-5bc5-62c5-31aacf780a76": {
+        "name": "Engines",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "7fd03441-bbed-79f1-e6f5-d6a9fa25b310": {
+        "name": "Tail",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "57561ab2-02df-e8eb-f80a-ffe5addc3fc9": {
+        "name": "Landing_gear",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "ef9452f6-fab3-14c7-69c1-ba6f487fb1e2": {
+        "name": "Cargo",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "e22be4d7-22ee-a2c8-1225-7157e99247b5": {
+        "name": "Cockpit",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      }
+    }
+  }
+]

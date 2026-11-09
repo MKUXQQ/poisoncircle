@@ -1,0 +1,107 @@
+[
+  {
+    "uuid": "4b85012e-5b61-7700-4549-61b3383791d7",
+    "name": "animation.cargo_door_open_close",
+    "loop": "once",
+    "override": false,
+    "length": 4.5,
+    "snapping": 10,
+    "selected": true,
+    "group_name": "",
+    "scope": 0,
+    "anim_time_update": "",
+    "blend_weight": "",
+    "start_delay": "",
+    "loop_delay": "",
+    "animators": {
+      "8dac509c-a0b6-fcdf-e9fb-12c07cda6666": {
+        "name": "cargo_door",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false,
+        "keyframes": [
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "0",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "d913755e-cc71-6809-6e19-836698b7db02",
+            "time": 0,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "-100",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "ceaae347-ec6d-e8dc-ea4c-4c0e6360f40c",
+            "time": 1.5,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "-100",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "bda54d1f-0152-2097-adf9-55161d948207",
+            "time": 3,
+            "color": -1,
+            "interpolation": "linear"
+          },
+          {
+            "channel": "rotation",
+            "data_points": [
+              {
+                "x": "0",
+                "y": "0",
+                "z": "0"
+              }
+            ],
+            "uuid": "b329aaa1-b3cb-b6ce-bab8-7b40413aa221",
+            "time": 4.5,
+            "color": -1,
+            "interpolation": "linear"
+          }
+        ]
+      },
+      "2367e345-47cb-94a1-960b-0f9524b99118": {
+        "name": "Cabin",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "903144ca-86b7-6d71-34d0-07702165d089": {
+        "name": "Armour",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "c2674459-466a-7232-8562-56cefc9178cc": {
+        "name": "Cockpit",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      },
+      "b548a041-04c7-fb25-dc8e-613a8ec53455": {
+        "name": "Propulsion",
+        "type": "bone",
+        "rotation_global": false,
+        "quaternion_interpolation": false
+      }
+    }
+  }
+]

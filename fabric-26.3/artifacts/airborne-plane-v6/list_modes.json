@@ -1,0 +1,41 @@
+{
+  "current_mode": null,
+  "modes": [
+    {
+      "id": "ai_scratchpad",
+      "name": "AI Scratchpad",
+      "available": false,
+      "selected": false
+    },
+    {
+      "id": "animate",
+      "name": "动画模式",
+      "available": false,
+      "selected": false
+    },
+    {
+      "id": "display",
+      "name": "显示调整",
+      "available": false,
+      "selected": false
+    },
+    {
+      "id": "edit",
+      "name": "编辑模式",
+      "available": false,
+      "selected": false
+    },
+    {
+      "id": "paint",
+      "name": "绘画模式",
+      "available": false,
+      "selected": false
+    },
+    {
+      "id": "pose",
+      "name": "姿势",
+      "available": false,
+      "selected": false
+    }
+  ]
+}

@@ -59,10 +59,10 @@ public final class ScanDevice {
             MUST_RELEASE.remove(handler.player.getUUID());
         });
         ServerLifecycleEvents.SERVER_STOPPED.register(server -> { SESSIONS.clear(); MUST_RELEASE.clear(); });
-        // Consume block interaction, preventing held items from placing or firing while scanning.
+        // ScanHoldPayload handles scanning; suppress vanilla use packets during the scan teleport acknowledgement.
         UseBlockCallback.EVENT.register((player, level, hand, hit) ->
             level.getBlockState(hit.getBlockPos()).is(BLOCK) && !player.isSpectator()
-                ? InteractionResult.SUCCESS : InteractionResult.PASS);
+                ? InteractionResult.FAIL : InteractionResult.PASS);
     }
 
     private static void receive(MinecraftServer server, ServerPlayer player, ScanHoldPayload payload) {

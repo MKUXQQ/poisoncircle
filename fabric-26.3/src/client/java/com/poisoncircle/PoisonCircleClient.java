@@ -42,9 +42,15 @@ public final class PoisonCircleClient implements ClientModInitializer {
         XaeroCircleCompatibility.install();
         ScanDeviceClient.install();
         LobbyClient.install();
+        AirborneAdminClient.install();
+        AirborneFlightClient.install();
+        AirbornePlaneSounds.install();
+        CircleAudioClient.install();
+        ShrinkWarningClient.install();
     }
 
     public static void apply(CircleSyncPayload payload) {
+        CircleAudioClient.apply(payload);
         if (payload.active()) {
             CIRCLES.put(payload.dimension(), new TimedCircle(payload, System.nanoTime()));
         } else {
@@ -101,6 +107,7 @@ public final class PoisonCircleClient implements ClientModInitializer {
     }
 
     public static void shakeFromPoisonHit() {
+        CircleAudioClient.damage();
         shakeStartedNanos = System.nanoTime();
     }
 

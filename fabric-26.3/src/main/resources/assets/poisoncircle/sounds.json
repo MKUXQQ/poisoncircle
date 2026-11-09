@@ -1,0 +1,20 @@
+{
+  "airborne_engine": {
+    "sounds": [{"name": "poisoncircle:airborne/engine", "attenuation_distance": 96}]
+  },
+  "airborne_door": {
+    "sounds": [{"name": "poisoncircle:airborne/door", "attenuation_distance": 64}]
+  },
+  "airborne_exit": {
+    "sounds": [{"name": "poisoncircle:airborne/exit"}]
+  },
+  "circle_warning": {
+    "sounds": [{"name": "poisoncircle:circle/warning"}]
+  },
+  "circle_closing": {
+    "sounds": [{"name": "poisoncircle:circle/closing"}]
+  },
+  "circle_damage": {
+    "sounds": [{"name": "poisoncircle:circle/damage"}]
+  }
+}

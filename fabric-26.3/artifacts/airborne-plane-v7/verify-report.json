@@ -1,0 +1,40 @@
+{
+  "candidateOnly": false,
+  "passed": true,
+  "cubes": 302,
+  "doorCubes": 6,
+  "atlas": [
+    512,
+    512
+  ],
+  "aabb": {
+    "min": [
+      -9.081782078739355,
+      -3,
+      -14.9
+    ],
+    "max": [
+      9.081782078739355,
+      5.65,
+      15.02
+    ],
+    "dimensions": [
+      18.16356415747871,
+      8.65,
+      29.92
+    ]
+  },
+  "samples": 15012,
+  "collisions": [],
+  "uvOverlap": 0,
+  "nativeAnimation": {
+    "rotation": [
+      -1.7453292519943295,
+      0,
+      0,
+      "ZYX"
+    ],
+    "time": 1.5
+  },
+  "limitations": "Point sampling of transformed cuboids, not gameplay collision or FPS. AI image input unavailable; native captures retained. Apex Goblin-inspired independent geometry; visual quality not verified by image-capable model."
+}

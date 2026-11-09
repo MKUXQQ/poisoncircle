@@ -1,0 +1,198 @@
+[
+  {
+    "file": "fit-iso-0.png",
+    "position": [
+      120,
+      85,
+      140
+    ],
+    "target": [
+      0,
+      1,
+      -2
+    ],
+    "angle": 0
+  },
+  {
+    "file": "fit-front-0.png",
+    "position": [
+      0,
+      10,
+      180
+    ],
+    "target": [
+      0,
+      1,
+      -2
+    ],
+    "angle": 0
+  },
+  {
+    "file": "fit-side-0.png",
+    "position": [
+      -180,
+      10,
+      0
+    ],
+    "target": [
+      0,
+      1,
+      -2
+    ],
+    "angle": 0
+  },
+  {
+    "file": "fit-top-0.png",
+    "position": [
+      0,
+      180,
+      0
+    ],
+    "target": [
+      0,
+      1,
+      -2
+    ],
+    "angle": 0
+  },
+  {
+    "file": "fit-rear-0.png",
+    "position": [
+      0,
+      10,
+      -180
+    ],
+    "target": [
+      0,
+      1,
+      -2
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-cargo-0.png",
+    "position": [
+      1.6,
+      -0.38,
+      -5
+    ],
+    "target": [
+      -7,
+      -0.38,
+      -18
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-cabin-aft-0.png",
+    "position": [
+      0,
+      0.2,
+      14
+    ],
+    "target": [
+      0,
+      0.2,
+      -24
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-door-0.png",
+    "position": [
+      -17,
+      3,
+      -25
+    ],
+    "target": [
+      -7,
+      0,
+      -18
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-door-45.png",
+    "position": [
+      -17,
+      3,
+      -25
+    ],
+    "target": [
+      -7,
+      0,
+      -18
+    ],
+    "angle": -45
+  },
+  {
+    "file": "fit-iso-90.png",
+    "position": [
+      120,
+      85,
+      140
+    ],
+    "target": [
+      0,
+      1,
+      -2
+    ],
+    "angle": -90
+  },
+  {
+    "file": "fit-side-90.png",
+    "position": [
+      -180,
+      10,
+      0
+    ],
+    "target": [
+      0,
+      1,
+      -2
+    ],
+    "angle": -90
+  },
+  {
+    "file": "preview-cargo-90.png",
+    "position": [
+      1.6,
+      -0.38,
+      -5
+    ],
+    "target": [
+      -7,
+      -0.38,
+      -18
+    ],
+    "angle": -90
+  },
+  {
+    "file": "preview-cabin-aft-90.png",
+    "position": [
+      0,
+      0.2,
+      14
+    ],
+    "target": [
+      0,
+      0.2,
+      -24
+    ],
+    "angle": -90
+  },
+  {
+    "file": "preview-door-90.png",
+    "position": [
+      -17,
+      3,
+      -25
+    ],
+    "target": [
+      -7,
+      0,
+      -18
+    ],
+    "angle": -90
+  }
+]

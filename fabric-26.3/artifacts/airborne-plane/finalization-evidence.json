@@ -1,0 +1,11 @@
+{
+  "resolution": {
+    "width": 128,
+    "height": 128
+  },
+  "cubes": 20,
+  "groups": 7,
+  "boxUvBoundsChecked": true,
+  "oneBoxPerElement": true,
+  "actualBlockbench": true
+}

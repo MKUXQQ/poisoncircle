@@ -76,7 +76,7 @@ def previews():
               'channel_max': values.max(axis=(0, 1)).tolist(),
               'alpha_mean': float(values[..., 3].mean()),
               'coverage_percent': float((values[..., 3] > 0).mean() * 100),
-              'bright_pulse_percent': float((values[..., 1] >= 130).mean() * 100),
+              'bright_pulse_percent': float((values[..., 1] >= 74).mean() * 100),
               'axis_edge_max_delta': [int(np.abs(values[:, 0].astype(int) - values[:, -1]).max()), int(np.abs(values[0].astype(int) - values[-1]).max())],
               'runtime': 'one existing texture/surface, BAND_HEIGHT=32, geometry unchanged; FPS unmeasured',
               'preview_limitations': 'offline illustrative alpha blend; does not emulate Minecraft fog, shader, sampling or frame timing'}

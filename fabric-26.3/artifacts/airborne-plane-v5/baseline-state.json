@@ -1,0 +1,64 @@
+{
+  "project": {
+    "name": "Atlas C-94 Cabin V4",
+    "uuid": "5d029c06-da23-83c4-c9f5-75d160fcb179",
+    "save_path": "D:\\dsh项目\\项目终极对决\\poisoncircle\\fabric-26.3\\artifacts\\airborne-plane-v4\\Atlas C-94 Cabin V4.bbmodel"
+  },
+  "format": {
+    "id": "modded_entity",
+    "name": "模组版实体"
+  },
+  "resolution": {
+    "texture_width": 1024,
+    "texture_height": 1024
+  },
+  "counts": {
+    "cubes": 269,
+    "meshes": 0,
+    "groups": 8,
+    "textures": 1,
+    "outliner_elements": 269
+  },
+  "root_groups": [
+    {
+      "name": "Fuselage",
+      "uuid": "9b7ab078-7a37-9bc6-82a1-b0c411171ea4",
+      "children": 77
+    },
+    {
+      "name": "Wings",
+      "uuid": "b48e0770-215e-c8fd-61c2-c629b3725ee5",
+      "children": 20
+    },
+    {
+      "name": "Engines",
+      "uuid": "91274f12-c04d-dd75-8888-b8d7e88315d1",
+      "children": 48
+    },
+    {
+      "name": "Tail",
+      "uuid": "4d0d4235-0349-81f0-1dbb-80f9af21b3ed",
+      "children": 4
+    },
+    {
+      "name": "Landing_gear",
+      "uuid": "f6313ea8-19df-08c9-8214-a96e261ce98b",
+      "children": 10
+    },
+    {
+      "name": "Cargo",
+      "uuid": "7fef563a-6a39-9814-3f6e-7cc4dbe69a8f",
+      "children": 98
+    },
+    {
+      "name": "Cockpit",
+      "uuid": "c953f4d0-42a9-4e24-9541-f47ae876368a",
+      "children": 6
+    },
+    {
+      "name": "cargo_door",
+      "uuid": "7be6945a-b529-b762-486e-affcb45c0578",
+      "children": 6
+    }
+  ]
+}

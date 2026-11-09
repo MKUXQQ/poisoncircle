@@ -1,0 +1,40 @@
+{
+  "candidateOnly": true,
+  "passed": true,
+  "cubes": 200,
+  "doorCubes": 6,
+  "atlas": [
+    512,
+    512
+  ],
+  "aabb": {
+    "min": [
+      -14.063408011636668,
+      -3.5,
+      -17.38261328980988
+    ],
+    "max": [
+      14.063408011636668,
+      7.4,
+      16.1
+    ],
+    "dimensions": [
+      28.126816023273335,
+      10.9,
+      33.482613289809876
+    ]
+  },
+  "samples": 15012,
+  "collisions": [],
+  "uvOverlap": 0,
+  "nativeAnimation": {
+    "rotation": [
+      -1.7453292519943295,
+      0,
+      0,
+      "ZYX"
+    ],
+    "time": 1.5
+  },
+  "limitations": "Point sampling of transformed cuboids, not gameplay collision or FPS. AI image input unavailable; native captures retained. Superseded by parent Apex direction; do not install as final."
+}

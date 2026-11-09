@@ -1,0 +1,51 @@
+{
+  "path": "D:\\dsh项目\\项目终极对决\\poisoncircle\\fabric-26.3\\artifacts\\airborne-plane-v5\\Atlas C-94 Rear Cargo V5.bbmodel",
+  "profile": "generic",
+  "kind": "bbmodel",
+  "structural_errors_absent": true,
+  "dependencies_complete": true,
+  "counts": {
+    "elements": 328,
+    "plane_elements": 0,
+    "inverted_elements": 0,
+    "rotated_elements": 144,
+    "declared_export_faces": 1968
+  },
+  "textures": {
+    "0": {
+      "size": [
+        1024,
+        1024
+      ],
+      "pixels": 1048576,
+      "rgba_base_bytes": 4194304,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "frame_size": [
+        1024,
+        1024
+      ],
+      "frame_count": 1,
+      "animation_metadata_checked": false,
+      "uv_size": [
+        1024,
+        1024
+      ]
+    }
+  },
+  "texture_pixels": 1048576,
+  "errors": [],
+  "warnings": [
+    {
+      "code": "runtime_animation_not_verified",
+      "where": "model",
+      "detail": "Only editable geometry inspected; separately validate the actual runtime export and motion driver."
+    }
+  ],
+  "limitations": [
+    "No Minecraft client render or FPS measurement",
+    "No full schema validation or arbitrary overlap/hidden-face proof",
+    "No custom animation expansion, bone transform baking or outline pairing verification",
+    "Pack version, item definitions and display contexts require separate checks"
+  ]
+}

@@ -1,0 +1,2028 @@
+{
+  "meta": {
+    "format_version": "5.0",
+    "model_format": "modded_entity",
+    "box_uv": true
+  },
+  "name": "Airborne Transport",
+  "model_identifier": "",
+  "modded_entity_entity_class": "",
+  "modded_entity_version": "1.17",
+  "modded_entity_flip_y": true,
+  "visible_box": [
+    1,
+    1,
+    0
+  ],
+  "variable_placeholders": "",
+  "multi_file_ruleset": "",
+  "variable_placeholder_buttons": [],
+  "timeline_setups": [],
+  "unhandled_root_fields": {},
+  "ai_used": true,
+  "ai_agents": "dsh-blockbench-live",
+  "resolution": {
+    "width": 16,
+    "height": 16
+  },
+  "elements": [
+    {
+      "name": "Nose",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -1,
+        -5,
+        -1
+      ],
+      "to": [
+        1,
+        -1,
+        1
+      ],
+      "autouv": 1,
+      "color": 9,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            2,
+            2,
+            4,
+            6
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            2,
+            6
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            6,
+            2,
+            8,
+            6
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4,
+            2,
+            6,
+            6
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4,
+            2,
+            2,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            6,
+            0,
+            4,
+            2
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "d5ce833c-876b-63e5-afa4-39e06a4660c7"
+    },
+    {
+      "name": "Cabin core",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -1,
+        -1,
+        -1
+      ],
+      "to": [
+        1,
+        4,
+        1
+      ],
+      "autouv": 1,
+      "color": 6,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            2,
+            2,
+            4,
+            7
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            2,
+            7
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            6,
+            2,
+            8,
+            7
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4,
+            2,
+            6,
+            7
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4,
+            2,
+            2,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            6,
+            0,
+            4,
+            2
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "20c93e57-6bf3-49e1-280f-f8c6f15b9355"
+    },
+    {
+      "name": "Rear fuselage",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -1,
+        4,
+        -1
+      ],
+      "to": [
+        1,
+        8,
+        1
+      ],
+      "autouv": 1,
+      "color": 9,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            2,
+            2,
+            4,
+            6
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            2,
+            2,
+            6
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            6,
+            2,
+            8,
+            6
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            4,
+            2,
+            6,
+            6
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            4,
+            2,
+            2,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            6,
+            0,
+            4,
+            2
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "6e4ae424-1f6c-b4a5-a64b-25104a9dd325"
+    },
+    {
+      "name": "Port wing root",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -8,
+        0,
+        -0.5
+      ],
+      "to": [
+        -1,
+        4,
+        0.5
+      ],
+      "autouv": 1,
+      "color": 4,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            1,
+            8,
+            5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            1,
+            1,
+            5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            9,
+            1,
+            16,
+            5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8,
+            1,
+            9,
+            5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8,
+            1,
+            1,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            15,
+            0,
+            8,
+            1
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "67bb2bbd-89d3-bfbc-b608-ca983c7b40c8"
+    },
+    {
+      "name": "Port wing tip",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -10,
+        3,
+        -0.4
+      ],
+      "to": [
+        -8,
+        6,
+        0.4
+      ],
+      "autouv": 1,
+      "color": 4,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.8,
+            0.8,
+            2.8,
+            3.8
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.8,
+            0.8,
+            3.8
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            3.6,
+            0.8,
+            5.6,
+            3.8
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            2.8,
+            0.8,
+            3.5999999999999996,
+            3.8
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            2.8,
+            0.8,
+            0.7999999999999998,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.8,
+            0,
+            2.8,
+            0.8
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "9b465c61-51c4-0d86-8f59-e171788f8daa"
+    },
+    {
+      "name": "Starboard wing root",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        1,
+        0,
+        -0.5
+      ],
+      "to": [
+        8,
+        4,
+        0.5
+      ],
+      "autouv": 1,
+      "color": 0,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            1,
+            8,
+            5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            1,
+            1,
+            5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            9,
+            1,
+            16,
+            5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            8,
+            1,
+            9,
+            5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            8,
+            1,
+            1,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            15,
+            0,
+            8,
+            1
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "a59312c7-53fa-9679-9b9b-564e700e65cb"
+    },
+    {
+      "name": "Starboard wing tip",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        8,
+        3,
+        -0.4
+      ],
+      "to": [
+        10,
+        6,
+        0.4
+      ],
+      "autouv": 1,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.8,
+            0.8,
+            2.8,
+            3.8
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.8,
+            0.8,
+            3.8
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            3.6,
+            0.8,
+            5.6,
+            3.8
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            2.8,
+            0.8,
+            3.5999999999999996,
+            3.8
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            2.8,
+            0.8,
+            0.7999999999999998,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.8,
+            0,
+            2.8,
+            0.8
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "6d75eed1-e549-c065-7d11-47311fd24792"
+    },
+    {
+      "name": "Port aileron",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -9,
+        4,
+        -0.65
+      ],
+      "to": [
+        -7,
+        6,
+        -0.4
+      ],
+      "autouv": 1,
+      "color": 4,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            0.25,
+            2.25,
+            2.25
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.25,
+            0.25,
+            2.25
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            2.5,
+            0.25,
+            4.5,
+            2.25
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            2.25,
+            0.25,
+            2.5,
+            2.25
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            2.25,
+            0.25,
+            0.25,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0,
+            2.25,
+            0.25
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "24a841c1-f029-c36e-eabe-d53b6960c7c3"
+    },
+    {
+      "name": "Starboard aileron",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        7,
+        4,
+        -0.65
+      ],
+      "to": [
+        9,
+        6,
+        -0.4
+      ],
+      "autouv": 1,
+      "color": 1,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.25,
+            0.25,
+            2.25,
+            2.25
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.25,
+            0.25,
+            2.25
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            2.5,
+            0.25,
+            4.5,
+            2.25
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            2.25,
+            0.25,
+            2.5,
+            2.25
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            2.25,
+            0.25,
+            0.25,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.25,
+            0,
+            2.25,
+            0.25
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "509e6924-8b5e-c8fe-1f47-d0858a1d0a13"
+    },
+    {
+      "name": "Tailplane root",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -1,
+        7,
+        -0.25
+      ],
+      "to": [
+        1,
+        9,
+        0.25
+      ],
+      "autouv": 1,
+      "color": 2,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.5,
+            0.5,
+            2.5,
+            2.5
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.5,
+            0.5,
+            2.5
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            3,
+            0.5,
+            5,
+            2.5
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            2.5,
+            0.5,
+            3,
+            2.5
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            2.5,
+            0.5,
+            0.5,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.5,
+            0,
+            2.5,
+            0.5
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "ae919c7d-7534-afc8-2831-876559b445a0"
+    },
+    {
+      "name": "Port tailplane",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -4,
+        7,
+        -0.2
+      ],
+      "to": [
+        -1,
+        9,
+        0.2
+      ],
+      "autouv": 1,
+      "color": 6,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.4,
+            0.4,
+            3.4,
+            2.4
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.4,
+            0.4,
+            2.4
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            3.8,
+            0.4,
+            6.8,
+            2.4
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            3.4,
+            0.4,
+            3.8,
+            2.4
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            3.4,
+            0.4,
+            0.3999999999999999,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            6.4,
+            0,
+            3.4000000000000004,
+            0.4
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "4d6350fd-dce1-f257-682e-e0e1bbaae8b7"
+    },
+    {
+      "name": "Starboard tailplane",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        1,
+        7,
+        -0.2
+      ],
+      "to": [
+        4,
+        9,
+        0.2
+      ],
+      "autouv": 1,
+      "color": 6,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.4,
+            0.4,
+            3.4,
+            2.4
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.4,
+            0.4,
+            2.4
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            3.8,
+            0.4,
+            6.8,
+            2.4
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            3.4,
+            0.4,
+            3.8,
+            2.4
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            3.4,
+            0.4,
+            0.3999999999999999,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            6.4,
+            0,
+            3.4000000000000004,
+            0.4
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "4c506558-1e71-6008-7de1-c629d8c13cc4"
+    },
+    {
+      "name": "Fin",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -0.5,
+        7,
+        -0.2
+      ],
+      "to": [
+        0.5,
+        9,
+        2.2
+      ],
+      "autouv": 1,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            2.4000000000000004,
+            2.4000000000000004,
+            3.4000000000000004,
+            4.4
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            2.4000000000000004,
+            2.4000000000000004,
+            4.4
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            5.800000000000001,
+            2.4000000000000004,
+            6.800000000000001,
+            4.4
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            3.4000000000000004,
+            2.4000000000000004,
+            5.800000000000001,
+            4.4
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            3.4000000000000004,
+            2.4000000000000004,
+            2.4000000000000004,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.4,
+            0,
+            3.4000000000000004,
+            2.4000000000000004
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "eb160342-fd44-fc3f-a644-420dd3da59b2"
+    },
+    {
+      "name": "Cockpit canopy",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -0.85,
+        -1,
+        1
+      ],
+      "to": [
+        0.85,
+        1.4,
+        2
+      ],
+      "autouv": 1,
+      "color": 0,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            1,
+            2.7,
+            3.4
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            1,
+            1,
+            3.4
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            3.7,
+            1,
+            5.4,
+            3.4
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            2.7,
+            1,
+            3.7,
+            3.4
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            2.7,
+            1,
+            1.0000000000000002,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            4.4,
+            0,
+            2.7,
+            1
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "8ff6d6e6-c7bf-b60d-accc-bbf11c235c14"
+    },
+    {
+      "name": "Pilot seat",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -0.5,
+        -0.2,
+        0
+      ],
+      "to": [
+        0.5,
+        0.4,
+        1
+      ],
+      "autouv": 1,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            1,
+            2,
+            1.6
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            1,
+            1,
+            1.6
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            3,
+            1,
+            4,
+            1.6
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            2,
+            1,
+            3,
+            1.6
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            2,
+            1,
+            1,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "d3968fe6-eb33-7030-3d81-83ea70050d13"
+    },
+    {
+      "name": "Port engine nacelle",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -1.1,
+        2,
+        -1.7
+      ],
+      "to": [
+        -0.2,
+        5,
+        -0.7
+      ],
+      "autouv": 1,
+      "color": 2,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            1,
+            1.9000000000000001,
+            4
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            1,
+            1,
+            4
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            2.9000000000000004,
+            1,
+            3.8000000000000007,
+            4
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            1.9000000000000001,
+            1,
+            2.9000000000000004,
+            4
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            1.9000000000000001,
+            1,
+            1,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            2.8000000000000003,
+            0,
+            1.9000000000000001,
+            1
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "67823199-bc6f-b9b9-2af8-af199ff00c5e"
+    },
+    {
+      "name": "Starboard engine nacelle",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        0.2,
+        2,
+        -1.7
+      ],
+      "to": [
+        1.1,
+        5,
+        -0.7
+      ],
+      "autouv": 1,
+      "color": 0,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            1,
+            1,
+            1.9000000000000001,
+            4
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            1,
+            1,
+            4
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            2.9000000000000004,
+            1,
+            3.8000000000000007,
+            4
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            1.9000000000000001,
+            1,
+            2.9000000000000004,
+            4
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            1.9000000000000001,
+            1,
+            1,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            2.8000000000000003,
+            0,
+            1.9000000000000001,
+            1
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "e2ddafff-a875-6d6c-7dde-44ed6044450c"
+    },
+    {
+      "name": "Left wheel",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -2,
+        0,
+        -2.2
+      ],
+      "to": [
+        -1,
+        0.8,
+        -1.5
+      ],
+      "autouv": 1,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.7000000000000002,
+            0.7000000000000002,
+            1.7000000000000002,
+            1.5000000000000002
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.7000000000000002,
+            0.7000000000000002,
+            1.5000000000000002
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            2.4000000000000004,
+            0.7000000000000002,
+            3.4000000000000004,
+            1.5000000000000002
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            1.7000000000000002,
+            0.7000000000000002,
+            2.4000000000000004,
+            1.5000000000000002
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            1.7000000000000002,
+            0.7000000000000002,
+            0.7000000000000002,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            2.7,
+            0,
+            1.7000000000000002,
+            0.7000000000000002
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "94b0c755-5b66-c3af-a55c-a1a2f85aae3d"
+    },
+    {
+      "name": "Right wheel",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        1,
+        0,
+        -2.2
+      ],
+      "to": [
+        2,
+        0.8,
+        -1.5
+      ],
+      "autouv": 1,
+      "color": 7,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.7000000000000002,
+            0.7000000000000002,
+            1.7000000000000002,
+            1.5000000000000002
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.7000000000000002,
+            0.7000000000000002,
+            1.5000000000000002
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            2.4000000000000004,
+            0.7000000000000002,
+            3.4000000000000004,
+            1.5000000000000002
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            1.7000000000000002,
+            0.7000000000000002,
+            2.4000000000000004,
+            1.5000000000000002
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            1.7000000000000002,
+            0.7000000000000002,
+            0.7000000000000002,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            2.7,
+            0,
+            1.7000000000000002,
+            0.7000000000000002
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "278f040e-d36b-faf0-2363-a78f1c76c8a1"
+    },
+    {
+      "name": "Tail wheel",
+      "box_uv": true,
+      "render_order": "default",
+      "locked": false,
+      "export": true,
+      "scope": 0,
+      "allow_mirror_modeling": true,
+      "from": [
+        -0.4,
+        7,
+        -1.7
+      ],
+      "to": [
+        0.4,
+        7.6,
+        -1.1
+      ],
+      "autouv": 1,
+      "color": 3,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            0.5999999999999999,
+            0.5999999999999999,
+            1.4,
+            1.1999999999999995
+          ],
+          "texture": 0
+        },
+        "east": {
+          "uv": [
+            0,
+            0.5999999999999999,
+            0.5999999999999999,
+            1.1999999999999995
+          ],
+          "texture": 0
+        },
+        "south": {
+          "uv": [
+            1.9999999999999998,
+            0.5999999999999999,
+            2.8,
+            1.1999999999999995
+          ],
+          "texture": 0
+        },
+        "west": {
+          "uv": [
+            1.4,
+            0.5999999999999999,
+            1.9999999999999998,
+            1.1999999999999995
+          ],
+          "texture": 0
+        },
+        "up": {
+          "uv": [
+            1.4,
+            0.5999999999999999,
+            0.5999999999999999,
+            0
+          ],
+          "texture": 0
+        },
+        "down": {
+          "uv": [
+            2.2,
+            0,
+            1.4000000000000001,
+            0.5999999999999999
+          ],
+          "texture": 0
+        }
+      },
+      "type": "cube",
+      "uuid": "eb7500a9-b0e3-5b2a-75a2-eb267398f44a"
+    }
+  ],
+  "groups": [
+    {
+      "name": "Fuselage",
+      "uuid": "b7ee679e-2429-43a9-55b3-5345759a7291",
+      "export": true,
+      "locked": false,
+      "scope": 0,
+      "selected": false,
+      "visibility": true,
+      "_static": {
+        "properties": {},
+        "temp_data": {}
+      },
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [],
+      "reset": false,
+      "shade": true,
+      "mirror_uv": false,
+      "autouv": 0,
+      "isOpen": false,
+      "primary_selected": false
+    },
+    {
+      "name": "LeftWing",
+      "uuid": "6a02a0cc-b7ee-58a0-e51e-4d008fbdb4ab",
+      "export": true,
+      "locked": false,
+      "scope": 0,
+      "selected": false,
+      "visibility": true,
+      "_static": {
+        "properties": {},
+        "temp_data": {}
+      },
+      "origin": [
+        -1,
+        4,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [],
+      "reset": false,
+      "shade": true,
+      "mirror_uv": false,
+      "autouv": 0,
+      "isOpen": false,
+      "primary_selected": false
+    },
+    {
+      "name": "RightWing",
+      "uuid": "3865ea70-8c71-5605-d4b5-ed6360150a79",
+      "export": true,
+      "locked": false,
+      "scope": 0,
+      "selected": false,
+      "visibility": true,
+      "_static": {
+        "properties": {},
+        "temp_data": {}
+      },
+      "origin": [
+        1,
+        4,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [],
+      "reset": false,
+      "shade": true,
+      "mirror_uv": false,
+      "autouv": 0,
+      "isOpen": false,
+      "primary_selected": false
+    },
+    {
+      "name": "Tail",
+      "uuid": "44544f87-bd20-1208-017c-ca92d50a6407",
+      "export": true,
+      "locked": false,
+      "scope": 0,
+      "selected": false,
+      "visibility": true,
+      "_static": {
+        "properties": {},
+        "temp_data": {}
+      },
+      "origin": [
+        0,
+        -4,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [],
+      "reset": false,
+      "shade": true,
+      "mirror_uv": false,
+      "autouv": 0,
+      "isOpen": false,
+      "primary_selected": false
+    },
+    {
+      "name": "Cockpit",
+      "uuid": "7a71250a-7cfc-e4fd-a885-add1c853e2b3",
+      "export": true,
+      "locked": false,
+      "scope": 0,
+      "selected": false,
+      "visibility": true,
+      "_static": {
+        "properties": {},
+        "temp_data": {}
+      },
+      "origin": [
+        0,
+        1,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [],
+      "reset": false,
+      "shade": true,
+      "mirror_uv": false,
+      "autouv": 0,
+      "isOpen": false,
+      "primary_selected": true
+    },
+    {
+      "name": "Engines",
+      "uuid": "39ec6dc7-c19d-613c-49ee-cc83d5c0874e",
+      "export": true,
+      "locked": false,
+      "scope": 0,
+      "selected": false,
+      "visibility": true,
+      "_static": {
+        "properties": {},
+        "temp_data": {}
+      },
+      "origin": [
+        0,
+        4,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [],
+      "reset": false,
+      "shade": true,
+      "mirror_uv": false,
+      "autouv": 0,
+      "isOpen": false,
+      "primary_selected": false
+    },
+    {
+      "name": "LandingGear",
+      "uuid": "5601a3f3-fc36-1748-85f2-edecc474e6ab",
+      "export": true,
+      "locked": false,
+      "scope": 0,
+      "selected": false,
+      "visibility": true,
+      "_static": {
+        "properties": {},
+        "temp_data": {}
+      },
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "color": 0,
+      "children": [],
+      "reset": false,
+      "shade": true,
+      "mirror_uv": false,
+      "autouv": 0,
+      "isOpen": false,
+      "primary_selected": false
+    }
+  ],
+  "outliner": [
+    {
+      "uuid": "b7ee679e-2429-43a9-55b3-5345759a7291",
+      "isOpen": false,
+      "children": [
+        "20c93e57-6bf3-49e1-280f-f8c6f15b9355",
+        "d5ce833c-876b-63e5-afa4-39e06a4660c7",
+        "6e4ae424-1f6c-b4a5-a64b-25104a9dd325"
+      ]
+    },
+    {
+      "uuid": "6a02a0cc-b7ee-58a0-e51e-4d008fbdb4ab",
+      "isOpen": false,
+      "children": [
+        "24a841c1-f029-c36e-eabe-d53b6960c7c3",
+        "67bb2bbd-89d3-bfbc-b608-ca983c7b40c8",
+        "9b465c61-51c4-0d86-8f59-e171788f8daa"
+      ]
+    },
+    {
+      "uuid": "3865ea70-8c71-5605-d4b5-ed6360150a79",
+      "isOpen": false,
+      "children": [
+        "509e6924-8b5e-c8fe-1f47-d0858a1d0a13",
+        "a59312c7-53fa-9679-9b9b-564e700e65cb",
+        "6d75eed1-e549-c065-7d11-47311fd24792"
+      ]
+    },
+    {
+      "uuid": "44544f87-bd20-1208-017c-ca92d50a6407",
+      "isOpen": false,
+      "children": [
+        "eb160342-fd44-fc3f-a644-420dd3da59b2",
+        "4d6350fd-dce1-f257-682e-e0e1bbaae8b7",
+        "4c506558-1e71-6008-7de1-c629d8c13cc4",
+        "ae919c7d-7534-afc8-2831-876559b445a0"
+      ]
+    },
+    {
+      "uuid": "7a71250a-7cfc-e4fd-a885-add1c853e2b3",
+      "isOpen": false,
+      "children": [
+        "8ff6d6e6-c7bf-b60d-accc-bbf11c235c14",
+        "d3968fe6-eb33-7030-3d81-83ea70050d13"
+      ]
+    },
+    {
+      "uuid": "39ec6dc7-c19d-613c-49ee-cc83d5c0874e",
+      "isOpen": false,
+      "children": [
+        "67823199-bc6f-b9b9-2af8-af199ff00c5e",
+        "e2ddafff-a875-6d6c-7dde-44ed6044450c"
+      ]
+    },
+    {
+      "uuid": "5601a3f3-fc36-1748-85f2-edecc474e6ab",
+      "isOpen": false,
+      "children": [
+        "94b0c755-5b66-c3af-a55c-a1a2f85aae3d",
+        "278f040e-d36b-faf0-2363-a78f1c76c8a1",
+        "eb7500a9-b0e3-5b2a-75a2-eb267398f44a"
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "name": "airbornetransport",
+      "path": "",
+      "folder": "",
+      "namespace": "",
+      "id": "0",
+      "group": "",
+      "scope": 0,
+      "width": 128,
+      "height": 128,
+      "uv_width": 16,
+      "uv_height": 16,
+      "particle": false,
+      "use_as_default": false,
+      "layers_enabled": false,
+      "sync_to_project": "",
+      "file_format": "png",
+      "render_mode": "default",
+      "render_sides": "auto",
+      "wrap_mode": "limited",
+      "pbr_channel": "color",
+      "fps": 7,
+      "force_translucent": false,
+      "frame_time": 1,
+      "frame_order_type": "loop",
+      "frame_order": "",
+      "frame_interpolate": false,
+      "visible": true,
+      "internal": true,
+      "saved": false,
+      "uuid": "63df8a27-5975-8668-74b6-11a0fa1a3f9e",
+      "source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAADb0lEQVR4AeyUvW0eMRBEiavGuRtwH85chOEaDLgFB4qUKVekEqRYRagECQqU6EDx7sgld3afgYPh+1nOvnn+tm8//7xy5WWwFf6kJoAAqesvBQEQIDmB5OvzC4AAyQkkX59fgKQCfKzdFODf832xvF4eH8rK6wPEqr8t2b7Pbu3VFKA1gOfaBBBAu7/u9AjQjVB7AAJo99edHgG6EWoPQADt/rrTI0A3Qq0Bn9NuD39/la+u73e3xfJ6ur8pK6+vdp/xzJLt++zWDttnI/h3LgIIkKvv3bYIsEOS6wYC5Op7ty0C7JDkuoEAufrebYsAOyQxb9S2QoAamST3ESBJ0bU1EaBGJsl9BEhSdG1NBKiRSXIfAZIUXVsTAWpkktxHgOBFt9ZDgBah4M8RIHjBrfUQoEUo+HMECF5waz0EaBEK/hwBghfcWg8BWoSCP0eAoAUfXQsBjpIK+h4CBC326FoIcJRU0PcQIGixR9dCgKOkgr6HAEGLPboWAhwlFfQ9BAhW7Nl1EOAssWDvI0CwQs+ugwBniQV7HwGCFXp2HQQ4SyzY+wgQrNCz6yDAWWLB3keAIIVeXQMBrpIL8h0CBCny6hoIcJVckO8QIEiRV9dAgKvkgnyHAEGKvLoGAlwlF+Q7BBAvsjc+AvQSFP8eAcQL7I2PAL0Exb9HAPECe+MjQC9B8e8RQLzA3vgI0EtQ/HsEEC1wVGwEGEVSdA4CiBY3KjYCjCIpOgcBRIsbFRsBRpEUnYMAosWNio0Ao0iKzkEAseJGx0WA0UTF5iGAWGGj4yLAaKJi8xBArLDRcRFgNFGxeQggVtjouAgwmqjYPAQQKcwqJgJYkRWZiwAiRVnFRAArsiJzEUCkKKuYCGBFVmQuAogUZRUTAazIisxFAOdFWcdDAGvCzucjgPOCrOMhgDVh5/MRwHlB1vEQwJqw8/kI4Lwg63gIYE3Y+XwEcFrQrFgIMIu003MQwGkxs2IhwCzSTs9BAKfFzIqFALNIOz0HAZwWMysWAswi7fQcBHBWzOw424/f/wtXXgb8Asz+L+fsPARwVsjsOAgwm7iz8xDAWSGz4yDAbOLOzkMAZ4XMjoMAs4lXzlt1GwFWkXdyLgI4KWJVDARYRd7JuQjgpIhVMRBgFXkn5yKAkyJWxUCAVeSdnIsAi4tYffwbAAAA//9hK6RsAAAABklEQVQDANarPi79YykYAAAAAElFTkSuQmCC"
+    }
+  ]
+}

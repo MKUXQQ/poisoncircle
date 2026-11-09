@@ -1,0 +1,198 @@
+[
+  {
+    "file": "fit-iso-0.png",
+    "position": [
+      48,
+      32,
+      48
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "angle": 0
+  },
+  {
+    "file": "fit-front-0.png",
+    "position": [
+      0,
+      4,
+      70
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "angle": 0
+  },
+  {
+    "file": "fit-side-0.png",
+    "position": [
+      -70,
+      4,
+      0
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "angle": 0
+  },
+  {
+    "file": "fit-top-0.png",
+    "position": [
+      0,
+      70,
+      0
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "angle": 0
+  },
+  {
+    "file": "fit-rear-0.png",
+    "position": [
+      0,
+      4,
+      -70
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-cabin-0.png",
+    "position": [
+      0,
+      0.2,
+      -7.5
+    ],
+    "target": [
+      0,
+      -0.3,
+      1
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-seat-0.png",
+    "position": [
+      0,
+      0.2,
+      -6.4
+    ],
+    "target": [
+      -1.9,
+      -0.6,
+      -4
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-door-0.png",
+    "position": [
+      7,
+      4,
+      -16
+    ],
+    "target": [
+      0,
+      -0.6,
+      -9
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-aft-0.png",
+    "position": [
+      0,
+      0.1,
+      -15.5
+    ],
+    "target": [
+      0,
+      -0.5,
+      -4
+    ],
+    "angle": 0
+  },
+  {
+    "file": "preview-door-50.png",
+    "position": [
+      7,
+      4,
+      -16
+    ],
+    "target": [
+      0,
+      -0.6,
+      -9
+    ],
+    "angle": -50
+  },
+  {
+    "file": "fit-iso-100.png",
+    "position": [
+      48,
+      32,
+      48
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "angle": -100
+  },
+  {
+    "file": "fit-side-100.png",
+    "position": [
+      -70,
+      4,
+      0
+    ],
+    "target": [
+      0,
+      1,
+      0
+    ],
+    "angle": -100
+  },
+  {
+    "file": "preview-door-100.png",
+    "position": [
+      7,
+      4,
+      -16
+    ],
+    "target": [
+      0,
+      -0.6,
+      -9
+    ],
+    "angle": -100
+  },
+  {
+    "file": "preview-aft-100.png",
+    "position": [
+      0,
+      0.1,
+      -15.5
+    ],
+    "target": [
+      0,
+      -0.5,
+      -4
+    ],
+    "angle": -100
+  }
+]

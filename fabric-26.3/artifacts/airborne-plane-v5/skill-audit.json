@@ -1,0 +1,847 @@
+{
+  "path": "D:\\dsh项目\\项目终极对决\\poisoncircle\\fabric-26.3\\artifacts\\airborne-plane-v5\\Atlas C-94 Rear Cargo V5.bbmodel",
+  "profile": "java-26.1",
+  "kind": "bbmodel",
+  "structural_errors_absent": false,
+  "dependencies_complete": true,
+  "counts": {
+    "elements": 328,
+    "plane_elements": 0,
+    "inverted_elements": 0,
+    "rotated_elements": 144,
+    "declared_export_faces": 1968
+  },
+  "textures": {
+    "0": {
+      "size": [
+        1024,
+        1024
+      ],
+      "pixels": 1048576,
+      "rgba_base_bytes": 4194304,
+      "transparent_pixels": 0,
+      "partial_alpha_pixels": 0,
+      "frame_size": [
+        1024,
+        1024
+      ],
+      "frame_count": 1,
+      "animation_metadata_checked": false,
+      "uv_size": [
+        1024,
+        1024
+      ]
+    }
+  },
+  "texture_pixels": 1048576,
+  "errors": [
+    {
+      "code": "java_coordinate_overflow",
+      "where": "0:Cargo_aft_facet_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "1:Cargo_aft_facet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "2:Cargo_aft_facet_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "3:Cargo_aft_facet_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "4:Cargo_aft_facet_4",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "5:Cargo_aft_facet_5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "6:Cargo_aft_facet_6",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "7:Cargo_aft_facet_7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "16:Door_band_facet_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "17:Door_band_facet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "18:Door_band_facet_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "19:Door_band_facet_4",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "20:Door_band_facet_5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "21:Door_band_facet_6",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "22:Door_band_facet_7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "23:Nose_shoulder_facet_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "24:Nose_shoulder_facet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "25:Nose_shoulder_facet_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "26:Nose_shoulder_facet_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "27:Nose_shoulder_facet_4",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "28:Nose_shoulder_facet_5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "29:Nose_shoulder_facet_6",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "30:Nose_shoulder_facet_7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "31:Nose_curve_facet_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "32:Nose_curve_facet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "33:Nose_curve_facet_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "34:Nose_curve_facet_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "35:Nose_curve_facet_4",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "36:Nose_curve_facet_5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "37:Nose_curve_facet_6",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "38:Nose_curve_facet_7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "39:Nose_tip_facet_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "40:Nose_tip_facet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "41:Nose_tip_facet_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "42:Nose_tip_facet_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "43:Nose_tip_facet_4",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "44:Nose_tip_facet_5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "45:Nose_tip_facet_6",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "46:Nose_tip_facet_7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "47:Nose_cap",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "48:Tail_shoulder_facet_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "49:Tail_shoulder_facet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "50:Tail_shoulder_facet_7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "51:Tail_curve_facet_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "52:Tail_curve_facet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "53:Tail_curve_facet_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "54:Tail_curve_facet_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "55:Tail_curve_facet_4",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "56:Tail_curve_facet_5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "57:Tail_curve_facet_6",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "58:Tail_curve_facet_7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "59:Tail_tip_facet_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "60:Tail_tip_facet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "61:Tail_tip_facet_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "62:Tail_tip_facet_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "63:Tail_tip_facet_4",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "64:Tail_tip_facet_5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "65:Tail_tip_facet_6",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "66:Tail_tip_facet_7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "67:Tail_cap",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "70:Port_continuous_hull",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "71:Tail_root_cheek_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "72:Tail_root_upper_wall_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "73:Tail_root_cheek_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "74:Tail_root_upper_wall_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "75:Port_inner_wing",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "76:Port_outer_wing",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "77:Port_tip",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "78:Port_flap",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "79:Port_aileron",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "80:Port_winglet",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "81:Port_tailplane",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "82:Port_tail_elevator",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "83:Starboard_inner_wing",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "84:Starboard_outer_wing",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "85:Starboard_tip",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "86:Starboard_flap",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "87:Starboard_aileron",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "88:Starboard_winglet",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "89:Starboard_tailplane",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "90:Starboard_tail_elevator",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "91:Wing_root_fairing_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "92:Wing_root_fairing_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "93:Navigation_lamp_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "94:Navigation_lamp_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "107:Port_Engine_24_pylon",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "108:Port_Engine_24_nacelle_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "109:Port_Engine_24_intake_lip_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "110:Port_Engine_24_nacelle_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "111:Port_Engine_24_intake_lip_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "112:Port_Engine_24_nacelle_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "113:Port_Engine_24_intake_lip_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "114:Port_Engine_24_nacelle_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "115:Port_Engine_24_intake_lip_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "116:Port_Engine_24_fan_disc",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "117:Port_Engine_24_spinner",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "118:Port_Engine_24_exhaust",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "131:Starboard_Engine_24_pylon",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "132:Starboard_Engine_24_nacelle_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "134:Starboard_Engine_24_nacelle_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "136:Starboard_Engine_24_nacelle_2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "138:Starboard_Engine_24_nacelle_3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "142:Starboard_Engine_24_exhaust",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "143:Swept_vertical_fin",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "144:Rudder",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "145:Tail_root_fillet_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "146:Tail_root_fillet_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "157:Cargo_floor",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "158:Cargo_lamp_-1_-25",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "159:Cargo_lamp_1_-25",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "166:Wall_rib_-1_-25",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "167:Ceiling_shoulder_-1_-25",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "168:Wall_rib_1_-25",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "169:Ceiling_shoulder_1_-25",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "170:Roof_crossbeam_-25",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "196:Hydraulic_line_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "197:Cable_raceway_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "198:Service_junction_-1_-24",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "201:Hydraulic_line_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "202:Cable_raceway_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "203:Service_junction_1_-24",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "212:Rear_jamb_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "213:Rear_hinge_mount_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "214:Rear_jamb_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "215:Rear_hinge_mount_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "216:Rear_header",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "217:Rear_threshold",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "218:Rear_exit_lamp",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "273:Rack_post_-1_-19_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "274:Rack_post_-1_-19_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "275:Rack_shelf_-1_-19_-1.9",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "276:Rack_shelf_-1_-19_-0.2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "277:Rack_shelf_-1_-19_1.5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "278:Rack_load_-1_-19_-1.7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "279:Rack_tiedown_-1_-19_-1.7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "280:Rack_load_-1_-19_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "281:Rack_tiedown_-1_-19_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "291:Cabin_side_liner_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "292:Rack_post_1_-19_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "293:Rack_post_1_-19_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "294:Rack_shelf_1_-19_-1.9",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "295:Rack_shelf_1_-19_-0.2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "296:Rack_shelf_1_-19_1.5",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "297:Rack_load_1_-19_-1.7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "298:Rack_tiedown_1_-19_-1.7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "299:Rack_load_1_-19_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "300:Rack_tiedown_1_-19_0",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "310:Cabin_side_liner_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "316:Windshield_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "318:Windshield_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "320:Cockpit_center_frame",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "321:Rear_ramp_panel",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "322:Rear_ramp_edge_-1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "323:Rear_ramp_edge_1",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "324:Rear_ramp_external_stiffener_-1.7",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "325:Rear_ramp_external_stiffener_-0.2",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "326:Rear_ramp_external_stiffener_1.3",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    },
+    {
+      "code": "java_coordinate_overflow",
+      "where": "327:Rear_ramp_external_stiffener_2.6",
+      "detail": "Local from/to including inflate exceed [-16,32]"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "runtime_animation_not_verified",
+      "where": "model",
+      "detail": "Only editable geometry inspected; separately validate the actual runtime export and motion driver."
+    },
+    {
+      "code": "editor_is_not_export",
+      "where": "model",
+      "detail": "Groups, animation, pivots, inflate and editor materials must be checked after Java export."
+    }
+  ],
+  "limitations": [
+    "No Minecraft client render or FPS measurement",
+    "No full schema validation or arbitrary overlap/hidden-face proof",
+    "No custom animation expansion, bone transform baking or outline pairing verification",
+    "Pack version, item definitions and display contexts require separate checks"
+  ]
+}

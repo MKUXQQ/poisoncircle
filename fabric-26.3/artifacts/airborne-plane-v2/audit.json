@@ -1,0 +1,64 @@
+{
+  "actualDesktop": true,
+  "cubes": 145,
+  "faces": 870,
+  "groups": 7,
+  "rotatedCubes": 94,
+  "rotationOrder": "ZYX",
+  "atlas": [
+    1024,
+    1024
+  ],
+  "texturePixels": 1048576,
+  "uvMax": [
+    1012.814,
+    838.6
+  ],
+  "noUvOverlaps": true,
+  "bounds": [
+    [
+      -33.89773202259897,
+      -9.2,
+      -53.080984059891605
+    ],
+    [
+      33.89773202259897,
+      15.2,
+      44.3
+    ]
+  ],
+  "span": 67.79546404519795,
+  "length": 97.3809840598916,
+  "seat": {
+    "feet": [
+      1.6,
+      6.65,
+      28.5
+    ],
+    "eye": [
+      1.6,
+      8.27,
+      28.5
+    ],
+    "modelUnitsAreWorldBlocks": true
+  },
+  "jumpExit": [
+    -9,
+    -2,
+    -17.5
+  ],
+  "doorOpening": {
+    "x": -7,
+    "y": [
+      -2.8,
+      2.8
+    ],
+    "z": [
+      -20,
+      -15
+    ]
+  },
+  "visualAudit": "modlens failed 400: oai-basispoints does not implement structured text.format output; parent asked to inspect saved previews",
+  "clientFps": "not measured",
+  "animation": "static, no dependencies"
+}

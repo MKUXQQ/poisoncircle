@@ -1,0 +1,46 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {createDesktopMcp} from 'file:///D:/dsh%E9%A1%B9%E7%9B%AE/blockbench-live/packages/dsh-blockbench-live/lib/desktop-mcp.js';
+const out=path.resolve('poisoncircle/fabric-26.3/artifacts/airborne-plane-v2');fs.mkdirSync(out,{recursive:true});
+const c=createDesktopMcp({timeoutMs:60000});
+const call=async(n,a={})=>{let r=await c.tool(n,a);if(r.isError)throw Error(n+': '+JSON.stringify(r));return r};
+const val=r=>{let t=r.content?.find(x=>x.type==='text')?.text;try{return JSON.parse(t)}catch{return t}};
+const es=[];let ux=4,uy=4,row=0;
+function box(name,from,to,mat='hull',rotation=[0,0,0],origin=[0,0,0],group='Airframe'){const d=to.map((v,i)=>v-from[i]);const w=Math.ceil(2*(d[0]+d[2]))+4,h=Math.ceil(d[1]+d[2])+4;if(ux+w>1020){ux=4;uy+=row;row=0}if(uy+h>1020)throw Error('atlas overflow');es.push({name,from,to,rotation,origin,uv_offset:[ux,uy],mat,group,w,h});ux+=w;row=Math.max(row,h)}
+function shell(label,z1,z2,r,cy=0){for(let i=0;i<8;i++){const a=i*45;box(label+'_facet_'+i,[-r*.415,cy+r-.55,z1],[r*.415,cy+r+.05,z2],i===4?'belly':'hull',[0,0,a],[0,cy,0],'Fuselage')}}
+shell('Cargo_barrel',-27,23,7);shell('Nose_shoulder',23,32,6.3,-.3);shell('Nose_taper',32,39,4.9,-1);shell('Nose_radome',39,44,2.8,-1.8);shell('Tail_taper',-40,-27,5.2,1.1);shell('Tail_cone',-49,-40,2.9,2.2);
+// Wings use overlapping swept structural panels, not thin pixel extrusions.
+for(const s of [-1,1]){const side=s<0?'Port':'Starboard';function sym(n,x1,x2,y1,y2,z1,z2,m='wing',ry=0){box(side+'_'+n,s<0?[-x2,y1,z1]:[x1,y1,z1],s<0?[-x1,y2,z2]:[x2,y2,z2],m,[0,s*ry,0],[s*x1,y1,z2],'Wings')}
+sym('inner_wing',5,19,4.3,5.6,-17,3,'wing',18);sym('outer_wing',17,29,4.5,5.4,-22,-8,'wing',22);sym('tip',27,33,4.6,5.2,-26,-16,'wing',24);sym('flap',8,18,4.1,4.6,-20,-17,'dark',18);sym('aileron',22,31,4.4,4.9,-25,-23,'dark',22);box(side+'_winglet',[s*33-.3,5,-25],[s*33+.3,8.7,-20],'accent',[14,0,s*-8],[s*33,5,-22],'Wings');
+sym('tailplane',1,13,15,15.8,-48,-40,'wing',24);sym('tail_elevator',4,12,14.8,15.2,-50,-48,'dark',24);
+for(const ex of [13,24]){const x=s*ex, z=ex===13?-3:-12,y=0;const tag=side+'_Engine_'+ex;
+box(tag+'_pylon',[x-.65,1,z-6],[x+.65,5,z+2],'belly',[0,0,0],[0,0,0],'Engines');
+for(let i=0;i<4;i++){box(tag+'_nacelle_'+i,[x-1.6,y+2.35,z-9],[x+1.6,y+3,z+5],'hull',[0,0,i*90],[x,y,z],'Engines');box(tag+'_intake_lip_'+i,[x-1.7,y+2.2,z+4.8],[x+1.7,y+3.15,z+5.7],'metal',[0,0,i*90],[x,y,z],'Engines')}
+box(tag+'_fan_disc',[x-2.2,y-2.2,z+4.5],[x+2.2,y+2.2,z+4.7],'fan',[0,0,0],[x,y,z],'Engines');box(tag+'_spinner',[x-.6,y-.6,z+4.7],[x+.6,y+.6,z+5.8],'metal',[0,0,45],[x,y,z],'Engines');box(tag+'_exhaust',[x-1.8,y-1.8,z-9.5],[x+1.8,y+1.8,z-8.8],'dark',[0,0,0],[0,0,0],'Engines');}}
+box('Swept_vertical_fin',[-.65,5,-45],[.65,15,-35],'accent',[-24,0,0],[0,5,-35],'Tail');box('Rudder',[-.7,7,-48],[.7,14,-45],'dark',[-24,0,0],[0,5,-35],'Tail');
+box('Cargo_floor',[-5.9,-5.2,-28],[5.9,-4.5,22],'interior',[0,0,0],[0,0,0],'Cargo');
+box('Rear_loading_ramp',[-4.4,-5,-39],[4.4,-4.3,-27],'ramp',[-12,0,0],[0,-4.5,-27],'Cargo');
+for(const s of [-1,1]){box('Cargo_tie_rail_'+s,[s*4.5-.15,-4.45,-26],[s*4.5+.15,-4.2,20],'yellow',[0,0,0],[0,0,0],'Cargo');box('Paratroop_door_'+s,[s*7-.13,-3,-20],[s*7+.13,2,-15],'door',[0,0,0],[0,0,0],'Cargo');box('Door_step_'+s,[s*7-.9,-3.4,-20],[s*7+.9,-3,-15],'metal',[0,0,0],[0,0,0],'Cargo')}
+box('Flightdeck_floor',[-3.6,5.5,24],[3.6,6.1,33],'interior',[0,0,0],[0,0,0],'Cockpit');
+box('Forward_windscreen',[-3.4,6.1,32.3],[3.4,8.7,32.6],'glass',[-23,0,0],[0,6.1,32.3],'Cockpit');
+for(const s of [-1,1]){box('Side_glazing_'+s,[s*3.5-.12,6.1,25],[s*3.5+.12,8.6,32],'glass',[0,0,s*12],[s*3.5,6.1,25],'Cockpit');box('Flightdeck_seat_'+s,[s*1.6-.7,6.15,27.5],[s*1.6+.7,6.6,29.5],'seat',[0,0,0],[0,0,0],'Cockpit');box('Seat_back_'+s,[s*1.6-.7,6.5,27.1],[s*1.6+.7,8.1,27.6],'seat',[0,0,0],[0,0,0],'Cockpit')}
+box('Flightdeck_console',[-2.9,6.1,30.5],[2.9,7.1,31.6],'console',[0,0,0],[0,0,0],'Cockpit');box('Flightdeck_roof',[-3.8,8.7,25],[3.8,9.1,31.8],'hull',[0,0,0],[0,0,0],'Cockpit');
+for(const s of [-1,1]){box('Gear_sponson_'+s,[s*6-1.4,-6.5,-16],[s*6+1.4,-4.5,-5],'belly',[0,0,0],[0,0,0],'Landing_gear');box('Gear_strut_'+s,[s*5.6-.3,-8,-12],[s*5.6+.3,-5.4,-10],'metal',[0,0,0],[0,0,0],'Landing_gear');for(const z of [-13,-9])box('Main_wheel_'+s+'_'+z,[s*5.6-.9,-9.2,z-1.4],[s*5.6+.9,-6.6,z+1.4],'rubber',[0,0,0],[0,0,0],'Landing_gear')}
+box('Nose_gear_strut',[-.35,-7,28],[.35,-4.5,29],'metal',[0,0,0],[0,0,0],'Landing_gear');box('Nose_gear_wheel',[-1.2,-8.4,27.5],[1.2,-6.5,30],'rubber',[0,0,0],[0,0,0],'Landing_gear');
+fs.writeFileSync(path.join(out,'design.json'),JSON.stringify(es,null,2));
+try{
+let before=await call('risky_eval',{code:'({projects:ModelProject.all.map(p=>({uuid:p.uuid,name:p.name,saved:p.saved})),active:typeof Project!=="undefined"&&Project?Project.uuid:null})'});fs.writeFileSync(path.join(out,'baseline-state.json'),JSON.stringify(before,null,2));
+if(val(before)?.projects?.length)throw Error('Unexpected existing tab; protect live state before proceeding');
+await call('create_project',{name:'Atlas C-94 Heavy Transport',format:'modded_entity'});
+await call('risky_eval',{code:'Undo.initEdit({uv_mode:true});Project.texture_width=1024;Project.texture_height=1024;Project.box_uv=true;Undo.finishEdit("Set 1024 transport atlas");({width:Project.texture_width,box_uv:Project.box_uv})'});
+await call('create_texture',{name:'airborne_plane',width:1024,height:1024,fill_color:'#26333d'});
+for(const group of [...new Set(es.map(e=>e.group))]){await call('add_group',{name:group});const elements=es.filter(e=>e.group===group).map(({mat,group,w,h,...e})=>e);await call('place_cube',{elements,group,texture:'airborne_plane',faces:true});}
+const paint=`(()=>{const tex=Texture.all[0];Undo.initEdit({textures:[tex],bitmap:true});const ctx=tex.canvas.getContext('2d');ctx.fillStyle='#202a32';ctx.fillRect(0,0,1024,1024);const data=${JSON.stringify(es)};const colors={hull:'#a7b6be',belly:'#4d626d',wing:'#c3cdd1',dark:'#263d4b',accent:'#147c94',metal:'#81949d',fan:'#172731',interior:'#53656a',ramp:'#56656b',yellow:'#dcab43',door:'#708c98',glass:'#123d55',seat:'#29454b',console:'#203843',rubber:'#17232b'};for(const e of data){let [x,y]=e.uv_offset;let w=e.w-3,h=e.h-3;ctx.fillStyle=colors[e.mat];ctx.fillRect(x,y,w,h);ctx.strokeStyle=e.mat==='glass'?'#71bcd5':'#6a818b';ctx.lineWidth=1;ctx.strokeRect(x+.5,y+.5,w-1,h-1);if(['hull','wing','belly'].includes(e.mat)){for(let a=12;a<w;a+=18){ctx.fillStyle='#8599a3';ctx.fillRect(x+a,y+1,1,h-2);ctx.fillStyle='#d8e0e2';for(let b=4;b<h;b+=11)ctx.fillRect(x+a+2,y+b,1,1)}ctx.fillStyle=e.mat==='wing'?'#147c94':'#326c80';ctx.fillRect(x+1,y+Math.floor(h*.48),w-2,Math.max(1,Math.floor(h*.09)));if(w>35){ctx.font='bold 5px monospace';ctx.fillStyle='#e3e8df';ctx.fillText('PC 094',x+5,y+Math.floor(h*.48)+5)}}if(e.mat==='fan'){let cx=x+w/2,cy=y+h/2;ctx.strokeStyle='#77909a';for(let a=0;a<12;a++){let t=a*Math.PI/6;ctx.beginPath();ctx.moveTo(cx+Math.cos(t)*.4,cy+Math.sin(t)*.4);ctx.lineTo(cx+Math.cos(t+.4)*w*.45,cy+Math.sin(t+.4)*h*.45);ctx.stroke()}}if(e.mat==='glass'){ctx.strokeStyle='#4f9db7';ctx.beginPath();ctx.moveTo(x+1,y+h-1);ctx.lineTo(x+w-1,y+1);ctx.stroke()}if(['ramp','door'].includes(e.mat)){ctx.fillStyle='#dcae4e';for(let a=0;a<w;a+=4)ctx.fillRect(x+a,y+h-2,2,2);ctx.fillStyle='#283e47';for(let a=4;a<h-3;a+=5)ctx.fillRect(x+2,y+a,w-4,1)}if(e.mat==='console'){ctx.fillStyle='#69c4bd';for(let a=2;a<w-2;a+=3)ctx.fillRect(x+a,y+2,2,2)}}tex.updateChangesAfterEdit();Undo.finishEdit('Paint dedicated panel atlas');Canvas.updateAll();return {texture:tex.uuid,count:data.length}})()`;
+await call('risky_eval',{code:paint});
+let saved=val(await call('risky_eval',{code:'({model:Codecs.project.compile(),png:Texture.all[0].canvas.toDataURL("image/png"),rotOrder:Cube.all.find(c=>c.rotation.some(v=>v)).mesh.rotation.order})'}));
+if(!saved.model||!saved.png)throw Error('Editor serialization missing');fs.writeFileSync(path.join(out,'Atlas C-94 Heavy Transport.bbmodel'),typeof saved.model==='string'?saved.model:JSON.stringify(saved.model));fs.writeFileSync(path.join(out,'airborne_plane.png'),Buffer.from(saved.png.split(',')[1],'base64'));
+await call('risky_eval',{code:`Project.save_path=${JSON.stringify(path.join(out,'Atlas C-94 Heavy Transport.bbmodel'))};Project.saved=true;({saved:Project.save_path})`});
+await call('create_offscreen_view',{id:'c94_review',width:1200,height:900,copy_view:'none'});
+for(const [name,pos] of [['iso',[120,85,140]],['front',[0,10,180]],['side',[180,10,0]],['top',[0,180,0]]]){let r=await call('set_camera_angle',{view:'c94_review',position:pos,target:[0,1,-2],projection:'orthographic',zoom:.7,max_size:1200});let im=r.content.find(x=>x.type==='image');if(!im)throw Error('No image '+name);fs.writeFileSync(path.join(out,'preview-'+name+'.png'),Buffer.from(im.data,'base64'));}
+await call('delete_offscreen_view',{view:'c94_review'});fs.writeFileSync(path.join(out,'editor-evidence.json'),JSON.stringify({cubes:es.length,rotationOrder:saved.rotOrder,atlas:1024,atlasUsedBottom:uy+row,actualDesktop:true},null,2));console.log(JSON.stringify({count:es.length,atlasBottom:uy+row,rotationOrder:saved.rotOrder}));
+}finally{c.close()}

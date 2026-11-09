@@ -1,0 +1,43 @@
+{
+  "status": "original temporary replacement, Apex originals not obtained",
+  "generator": "make_airborne_audio.py",
+  "reference_pages": [
+    "https://www.youtube.com/watch?v=GNzWtPq5lmU",
+    "https://www.youtube.com/watch?v=hB0oCiU4Zb0"
+  ],
+  "assets": [
+    {
+      "name": "engine",
+      "description": "Low turbine rumble and filtered thrust, seamless looping bed",
+      "origin": "Original procedural temporary effect; NOT original Apex Legends audio",
+      "duration_seconds": 5.88,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sha256": "85ad3f6c1c2072aa77fd7eedabfaaf0df9f8acdae7754dd7fa44fad38aaab06a",
+      "decoded_peak": 0.685499370098114,
+      "decoded_rms": 0.22742851689497898
+    },
+    {
+      "name": "door",
+      "description": "Hydraulic ramp actuator with latch and end-stop impact",
+      "origin": "Original procedural temporary effect; NOT original Apex Legends audio",
+      "duration_seconds": 1.5,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sha256": "571a33e31fcfadb34903bdd099649740f31fd80b58db6addf309a11e855ec929",
+      "decoded_peak": 0.6679667830467224,
+      "decoded_rms": 0.1203139666285195
+    },
+    {
+      "name": "exit",
+      "description": "Short air-rush transient on actual transition to glide",
+      "origin": "Original procedural temporary effect; NOT original Apex Legends audio",
+      "duration_seconds": 2.0,
+      "sample_rate": 44100,
+      "channels": 1,
+      "sha256": "872d8e439debade58a6f25cbeb7b3ba03d384d1ebc79897d7a944848fa705dcc",
+      "decoded_peak": 0.6600268483161926,
+      "decoded_rms": 0.10260488095982803
+    }
+  ]
+}

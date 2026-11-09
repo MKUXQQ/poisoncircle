@@ -1,0 +1,176 @@
+{
+  "current_format_codec": null,
+  "count": 17,
+  "codecs": [
+    {
+      "id": "bbs_model",
+      "name": "BBS model",
+      "extension": "json",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": false,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "bedrock",
+      "name": "Bedrock Model",
+      "extension": "json",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "bedrock_entity_file",
+      "name": "Bedrock Entity",
+      "extension": "json",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "bedrock_old",
+      "name": "Bedrock Entity Model",
+      "extension": "json",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": false,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "bedrock_voxel_shape",
+      "name": "Bedrock Voxel Shape",
+      "extension": "json",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "collada",
+      "name": "Collada Model",
+      "extension": "dae",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": false,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "fbx",
+      "name": "FBX Model",
+      "extension": "fbx",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "gltf",
+      "name": "GLTF Model",
+      "extension": "gltf",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "image",
+      "name": "图像",
+      "extension": "png",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": false,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "java_block",
+      "name": "Java Block/Item Model",
+      "extension": "json",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "modded_entity",
+      "name": "Java Class",
+      "extension": "java",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "obj",
+      "name": "OBJ Wavefront Model",
+      "extension": "obj",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "optifine_entity",
+      "name": "OptiFine JEM",
+      "extension": "jem",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "optifine_part",
+      "name": "OptiFine Part",
+      "extension": "jpm",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "project",
+      "name": "Blockbench Project",
+      "extension": "bbmodel",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": true,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "skin_model",
+      "name": "Skin Model",
+      "extension": null,
+      "has_compile": true,
+      "has_export": false,
+      "supports_partial_export": false,
+      "belongs_to_current_format": false,
+      "available": false
+    },
+    {
+      "id": "stl",
+      "name": "STL Model",
+      "extension": "stl",
+      "has_compile": true,
+      "has_export": true,
+      "supports_partial_export": false,
+      "belongs_to_current_format": false,
+      "available": false
+    }
+  ]
+}

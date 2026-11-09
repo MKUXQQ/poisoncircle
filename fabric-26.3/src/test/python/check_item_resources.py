@@ -3,8 +3,8 @@ import json
 from PIL import Image
 from generate_item_models import ASSETS, DISPLAY
 
-for kind in ('controller', 'detector'):
-    name = 'poison_circle_' + kind
+for kind in ('controller', 'detector', 'airborne_manager', 'airborne_setter'):
+    name = kind if kind.startswith('airborne_') else 'poison_circle_' + kind
     model = json.loads((ASSETS / 'models/item' / (name + '.json')).read_text(encoding='utf-8'))
     definition = json.loads((ASSETS / 'items' / (name + '.json')).read_text(encoding='utf-8'))
     assert definition == {'model': {'type': 'minecraft:model', 'model': 'poisoncircle:item/' + name}}

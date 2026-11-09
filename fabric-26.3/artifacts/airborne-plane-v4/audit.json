@@ -1,0 +1,96 @@
+{
+  "actualDesktop": true,
+  "uuid": "5d029c06-da23-83c4-c9f5-75d160fcb179",
+  "cubes": 269,
+  "atlasBottom": 154,
+  "door": {
+    "child": "cargo_door",
+    "pivot": [
+      -7,
+      2.35,
+      -18
+    ],
+    "closedZ": 0,
+    "openZ": -1.5707963267948966
+  },
+  "exportCubes": 269,
+  "declaredFaces": 1614,
+  "uniqueModelPartNames": 270,
+  "atlas": [
+    1024,
+    1024
+  ],
+  "materials": 1,
+  "texturePixels": 1048576,
+  "baseRGBABytes": 4194304,
+  "animationDependencies": 0,
+  "animationRuntime": "renderer cargo_door.zRot = -PI/2 * openFraction",
+  "doorCubes": 6,
+  "uvOverlaps": [],
+  "uvBoundsChecked": true,
+  "seatFeet": [
+    [
+      1.6,
+      -2,
+      -5
+    ],
+    [
+      -1.6,
+      -2,
+      -5
+    ]
+  ],
+  "walkDomain": {
+    "x": [
+      -5,
+      5
+    ],
+    "z": [
+      -21,
+      12
+    ],
+    "feetY": -2
+  },
+  "doorCorridor": {
+    "x": [
+      -9,
+      -5
+    ],
+    "z": [
+      -20.5,
+      -15.5
+    ]
+  },
+  "exit": [
+    -9,
+    -2,
+    -17.5
+  ],
+  "floor": {
+    "x": [
+      -6.6,
+      6.6
+    ],
+    "z": [
+      -28,
+      22
+    ],
+    "top": -2.05
+  },
+  "doorOpening": {
+    "x": -7,
+    "y": [
+      -2.2,
+      2.35
+    ],
+    "z": [
+      -21,
+      -15
+    ]
+  },
+  "baselinePreserved": true,
+  "gameClient": "not run by model delegate",
+  "fps": "not measured",
+  "retainedFaces": "Cabin, underside and door interior may be exposed; no speculative face removal",
+  "representation": "269 structural cuboids; panel seams/rivets use atlas paint; one rigid six-cube door assembly"
+}
